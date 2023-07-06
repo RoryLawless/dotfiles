@@ -17,9 +17,6 @@ if (interactive()) {
   utils::rc.settings(ipck = TRUE,
                      fuzzy = TRUE)
 
-  # warnings are errors
-  options(warn = 2)
-
   # fancy quotes are annoying and lead to
   # 'copy + paste' bugs / frustrations
   options(useFancyQuotes = FALSE)
