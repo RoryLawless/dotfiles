@@ -2,7 +2,6 @@
 if (interactive()) {
   suppressMessages(require(devtools))
 
-
   # from https://kevinushey.github.io/blog/2015/02/02/rprofile-essentials/
   # warn on partial matches
   options(
@@ -14,8 +13,10 @@ if (interactive()) {
   # enable autocompletions for package names in
   # `require()`, `library()`
   # enable fuzzy autocompletions
-  utils::rc.settings(ipck = TRUE,
-                     fuzzy = TRUE)
+  utils::rc.settings(
+    ipck = TRUE,
+    fuzzy = TRUE
+  )
 
   # fancy quotes are annoying and lead to
   # 'copy + paste' bugs / frustrations
@@ -32,4 +33,5 @@ if (interactive()) {
 
   options(scipen = 999)
 
+  options(install.packages.compile.from.source = "always")
 }
