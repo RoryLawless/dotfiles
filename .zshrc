@@ -106,6 +106,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias ls="exa --long --header --icons"
 alias r="radian"
+alias update="brew update && brew upgrade && brew cleanup"
 
 # Starship
 eval "$(starship init zsh)"
@@ -114,7 +115,7 @@ eval "$(starship init zsh)"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-alias config='/usr/bin/git --git-dir=/Users/rory/.cfg/ --work-tree=/Users/rory'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 # >>> conda initialize >>>
