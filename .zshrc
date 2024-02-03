@@ -104,8 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias ls="exa --long --header --icons"
-alias r="radian"
+alias ls="eza --long --header --classify --icons=auto"
 alias update="brew update && brew upgrade && brew cleanup"
 
 # Starship
