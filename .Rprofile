@@ -12,7 +12,7 @@ if (interactive()) {
 
   # enable autocompletions for package names in
   # `require()`, `library()`
-  # enable fuzzy autocompletions
+  # enable fuzzy auto completions
   utils::rc.settings(
     ipck = TRUE,
     fuzzy = TRUE
@@ -27,7 +27,7 @@ if (interactive()) {
 
   options(setWidthOnResize = TRUE)
 
-  options(repos = c(CRAN = "https://packagemanager.posit.co/cran/latest"))
+  options(repos = c(CRAN = c("https://packagemanager.posit.co/cran/latest")))
 
   options(prompt = "-> ")
 
