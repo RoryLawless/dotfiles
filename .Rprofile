@@ -27,11 +27,11 @@ if (interactive()) {
 
   options(setWidthOnResize = TRUE)
 
-  options(repos = c(CRAN = c("https://packagemanager.posit.co/cran/latest")))
+  options(repos = c(CRAN = c("https://packagemanager.posit.co/cran/latest",
+                             "https://rpolars.r-universe.dev")))
 
   options(prompt = "-> ")
 
   options(scipen = 999)
 
-  options(install.packages.compile.from.source = "always")
 }
