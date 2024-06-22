@@ -30,5 +30,5 @@ function fish_greeting
 
 
     printf (set_color purple;)"$RANDOM_GREETING It is $TIME on $DATE.\n"
-    fortune -s | cowsay | lolcat
+    fortune -s | lolcat
 end

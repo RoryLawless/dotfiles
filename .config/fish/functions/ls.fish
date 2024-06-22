@@ -1,4 +1,4 @@
 
 function ls
-    eza --long --header --classify --icons=auto $argv
+    eza --long --header --icons=never $argv
 end
