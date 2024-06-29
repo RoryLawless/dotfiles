@@ -3,11 +3,17 @@ if status is-interactive
 end
 set -gx EDITOR nano
 
-if test -e /opt/homebrew/opt/micromamba
-    # >>> mamba initialize >>>
-    # !! Contents within this block are managed by 'mamba init' !!
-    set -gx MAMBA_EXE "/opt/homebrew/opt/micromamba/bin/micromamba"
-    set -gx MAMBA_ROOT_PREFIX "$HOME/micromamba"
-    $MAMBA_EXE shell hook --shell fish --root-prefix $MAMBA_ROOT_PREFIX | source
-    # <<< mamba initialize <<<
+if test -e /opt/homebrew/Caskroom/miniconda
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /opt/homebrew/Caskroom/miniconda/base/bin/conda
+    eval /opt/homebrew/Caskroom/miniconda/base/bin/conda "shell.fish" "hook" $argv | source
+else
+    if test -f "/opt/homebrew/Caskroom/miniconda/base/etc/fish/conf.d/conda.fish"
+        . "/opt/homebrew/Caskroom/miniconda/base/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH "/opt/homebrew/Caskroom/miniconda/base/bin" $PATH
+    end
+end
+# <<< conda initialize <<<
 end
