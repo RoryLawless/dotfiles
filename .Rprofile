@@ -30,8 +30,6 @@ if (interactive()) {
   options(repos = c(CRAN = c("https://packagemanager.posit.co/cran/latest",
                              "https://rpolars.r-universe.dev")))
 
-  options(prompt = "-> ")
-
   options(scipen = 999)
 
 }
