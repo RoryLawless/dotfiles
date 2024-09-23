@@ -32,4 +32,6 @@ if (interactive()) {
 
   options(scipen = 999)
 
+  options(tigris_use_cache = TRUE)
+
 }
