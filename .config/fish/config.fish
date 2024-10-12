@@ -17,3 +17,6 @@ else
 end
 # <<< conda initialize <<<
 end
+
+# Added by LM Studio CLI tool (lms)
+set -gx PATH $PATH /Users/rory/.cache/lm-studio/bin
