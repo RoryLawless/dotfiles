@@ -1,4 +1,4 @@
 
 function update
-    brew update && brew upgrade && brew cleanup
+    brew update && brew upgrade --force --greedy && brew cleanup
 end

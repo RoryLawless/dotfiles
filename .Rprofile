@@ -27,9 +27,10 @@ if (interactive()) {
 
   options(setWidthOnResize = TRUE)
 
-  options(repos = c(RSPM = "https://packagemanager.posit.co/cran/latest",
-                    CRAN = "https://cloud.r-project.org",
-                    rpolars = "https://rpolars.r-universe.dev"))
+  options(repos = c(P3M = "https://packagemanager.posit.co/cran/latest",
+                    # CRAN = "https://cloud.r-project.org",
+                    rpolars = "https://rpolars.r-universe.dev",
+                    cmdstanr = "https://stan-dev.r-universe.dev"))
 
   options(scipen = 999)
 
