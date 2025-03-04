@@ -27,13 +27,18 @@ if (interactive()) {
 
   options(setWidthOnResize = TRUE)
 
-  options(repos = c(P3M = "https://packagemanager.posit.co/cran/latest",
-                    # CRAN = "https://cloud.r-project.org",
-                    rpolars = "https://rpolars.r-universe.dev",
-                    cmdstanr = "https://stan-dev.r-universe.dev"))
+  options(
+    repos = c(
+      P3M = "https://packagemanager.posit.co/cran/latest",
+      # CRAN = "https://cloud.r-project.org",
+      rpolars = "https://rpolars.r-universe.dev",
+      cmdstanr = "https://stan-dev.r-universe.dev",
+      httr2 = "https://r-lib.r-universe.dev/",
+      typstcv = "https://kazuyanagimoto.r-universe.dev"
+    )
+  )
 
   options(scipen = 999)
 
   options(tigris_use_cache = TRUE)
-
 }
