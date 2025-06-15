@@ -4,6 +4,5 @@ indent-width = 2
 indent-style = "tab"
 line-ending = "auto"
 persistent-line-breaks = true
-exclude = ["MUSA8010_Practicum_DC_Education/"]
 default-exclude = true
 skip = ["tribble"]
