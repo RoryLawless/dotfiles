@@ -1,0 +1,4 @@
+alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME/'
+alias ls='eza --long --header --icons=never'
+alias python='python3'
+alias update='brew update && brew upgrade --force --greedy'
