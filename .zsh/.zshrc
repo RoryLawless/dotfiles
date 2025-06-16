@@ -1,6 +1,15 @@
 
-fpath+=("$(brew --prefix)/share/zsh/site-functions"
-		"$ZDOTDIR/.zshfn/")
+if [[ $(uname) == "Darwin" ]] ; then
+
+	fpath+=("$(brew --prefix)/share/zsh/site-functions"
+			"$ZDOTDIR/.zshfn/")
+		
+elif [[ $(uname) == "Linux" ]] ; then
+
+	fpath+=("$ZDOTDIR/pure/"
+			"$ZDOTDIR/.zshfn/")
+
+fi
 
 autoload -Uz updateR
 
@@ -17,8 +26,19 @@ setopt complete_in_word
 setopt always_to_end
 
 source $ZDOTDIR/.zsh_aliases
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_STRATEGY=completion
 
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_AUTOSUGGEST_STRATEGY=completion
 ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets cursor)
+
+if [[ $(uname) == "Darwin" ]] ; then
+
+	source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+	source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+elif [[ $(uname) == "Linux" ]] ; then
+
+	source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+	source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+fi
+

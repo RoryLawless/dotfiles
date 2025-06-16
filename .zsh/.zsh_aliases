@@ -1,7 +1,12 @@
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME/'
 alias ls='eza --long --header --icons=never'
 alias python='python3'
-alias update='brew update && brew upgrade --force --greedy'
 alias rmrf='rm -rf'
-alias positron='open /Applications/Positron.app'
 alias zedit='$EDITOR $ZDOTDIR/.zshrc'
+
+if [[ $(uname) == "Darwin" ]]; then
+	alias update='brew update && brew upgrade --force --greedy && brew cleanup'
+	alias positron='open /Applications/Positron.app'
+elif [[ $(uname) == "Linux" ]]; then
+	alias update='sudo apt update && sudo apt upgrade && sudo apt autoclean'
+fi
