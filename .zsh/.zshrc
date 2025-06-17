@@ -28,7 +28,7 @@ setopt always_to_end
 source $ZDOTDIR/.zsh_aliases
 
 ZSH_AUTOSUGGEST_STRATEGY=completion
-ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets cursor)
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
 
 if [[ $(uname) == "Darwin" ]] ; then
 
