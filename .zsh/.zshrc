@@ -6,15 +6,20 @@ if [[ $(uname) == "Darwin" ]] ; then
 		
 elif [[ $(uname) == "Linux" ]] ; then
 
-	fpath+=("$ZDOTDIR/pure/"
-			"$ZDOTDIR/.zshfn/")
+	fpath+=("$ZDOTDIR/.zshfn/")
 
 fi
 
 autoload -Uz updateR
 
-autoload -U promptinit; promptinit
-prompt pure
+PROMPT='%2~ %(?.%F{14}❯.%F{9}❯)%f '
+RPROMPT='%F{8}⏲ %*%f'
+
+TMOUT=1
+
+TRAPALRM() {
+    zle reset-prompt
+}
 
 autoload -U compinit; compinit
 _comp_options+=(globdots)
@@ -27,8 +32,17 @@ setopt always_to_end
 
 source $ZDOTDIR/.zsh_aliases
 
-ZSH_AUTOSUGGEST_STRATEGY=completion
-ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets cursor)
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/Users/rory/.opam/opam-init/init.zsh' ]] || source '/Users/rory/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
+
 
 if [[ $(uname) == "Darwin" ]] ; then
 
@@ -42,3 +56,5 @@ elif [[ $(uname) == "Linux" ]] ; then
 
 fi
 
+
+. "$HOME/.local/bin/env"
