@@ -1,6 +1,7 @@
 # enable devtools in interactive sessions
 if (interactive()) {
 	suppressMessages(require(devtools))
+	suppressMessages(require(usethis))
 	suppressMessages(require(pak))
 	suppressMessages(require(lintr))
 }
