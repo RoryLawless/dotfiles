@@ -4,14 +4,15 @@ if (interactive()) {
 	suppressMessages(require(usethis))
 	suppressMessages(require(pak))
 	suppressMessages(require(lintr))
+	suppressMessages(require(conflicted))
 }
 
 # from https://kevinushey.github.io/blog/2015/02/02/rprofile-essentials/
 # warn on partial matches
 options(
-	warnPartialMatchAttr = TRUE,
-	warnPartialMatchDollar = TRUE,
 	warnPartialMatchArgs = TRUE,
+	warnPartialMatchDollar = TRUE,
+	warnPartialMatchAttr = TRUE,
 	# fancy quotes are annoying and lead to
 	# 'copy + paste' bugs / frustrations
 	useFancyQuotes = FALSE,
