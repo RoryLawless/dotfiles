@@ -96,6 +96,9 @@
 	"editor.tabCompletion": "on",
 	"editor.unicodeHighlight.invisibleCharacters": true,
 	"extensions.closeExtensionDetailsOnViewChange": true,
+	"files.associations": {
+		"renv.lock": "json"
+	},
 	"git.autofetch": true,
 	"git.blame.editorDecoration.enabled": true,
 	"git.defaultCloneDirectory": "~/repos",
@@ -115,8 +118,7 @@
 	"positron.r.quietMode": true,
 	"positron.viewer.interactivePlotsInViewer": true,
 	"projectManager.git.baseFolders": [
-		"~/repos",
-		"%USERPROFILE%/repos"
+		"~/repos"
 	],
 	"python.quietMode": true,
 	"python.terminal.shellIntegration.enabled": true,
@@ -128,7 +130,7 @@
 	"rewrap.reformat": true,
 	"rewrap.wrappingColumn": 80,
 	"terminal.external.osxExec": "Ghostty.app",
-	"terminal.external.windowsExec": "%USERPROFILE%/AppData/Local/Microsoft/WindowsApps/wt.exe",
+	"terminal.external.windowsExec": "%UserProfile%/AppData/Local/Microsoft/WindowsApps/wt.exe",
 	"terminal.integrated.defaultProfile.linux": "zsh",
 	"terminal.integrated.defaultProfile.osx": "zsh",
 	"terminal.integrated.defaultProfile.windows": "PowerShell",
@@ -145,8 +147,5 @@
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.keybindings.rstudioKeybindings": true,
 	"workbench.productIconTheme": "fluent-icons",
-	"workbench.startupEditor": "none",
-	"files.associations": {
-		"renv.lock": "json"
-	}
+	"workbench.startupEditor": "none"
 }
