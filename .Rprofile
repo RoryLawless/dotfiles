@@ -20,9 +20,12 @@ options(
 	max.print = 250,
 	setWidthOnResize = TRUE,
 	repos = c(
-		CRAN = "https://packagemanager.posit.co/cran/latest",
-		cmdstanr = "https://stan-dev.r-universe.dev",
-		typstcv = "https://kazuyanagimoto.r-universe.dev"
+		CRAN = if (grepl("linux", Sys.getenv("R_PLATFORM"))) {
+			"https://packagemanager.posit.co/cran/__linux__/bookworm/latest"
+		} else {
+			"https://packagemanager.posit.co/cran/latest"
+		},
+		cmdstanr = "https://stan-dev.r-universe.dev"
 	),
 	scipen = 999,
 	tigris_use_cache = TRUE
