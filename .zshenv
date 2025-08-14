@@ -5,5 +5,5 @@ if [[ $(uname) == "Darwin" ]]; then
 	export PATH="/opt/homebrew/sbin:$PATH"
 fi
 
-export EDITOR="micro"
+export EDITOR="emacs"
 export ZDOTDIR="$HOME/.zsh"
