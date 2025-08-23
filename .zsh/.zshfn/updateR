@@ -1,6 +1,0 @@
-
-updateR() {
-
-	Rscript -e "remotes::update_packages(upgrade = 'always', build = TRUE, repos = c(CRAN = 'https://packagemanager.posit.co/cran/latest', cmdstanr = 'https://stan-dev.r-universe.dev'))"
-
-}

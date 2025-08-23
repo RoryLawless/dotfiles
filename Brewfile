@@ -4,10 +4,6 @@ tap "homebrew/core"
 brew "air"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
-# Command-line interface for SQLite
-brew "sqlite"
-# Next-gen compiler infrastructure
-brew "llvm"
 # C library of Git core methods that is re-entrant and linkable
 brew "libgit2"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -32,6 +28,10 @@ brew "gcc"
 brew "gnupg"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
+# Command-line interface for SQLite
+brew "sqlite"
+# Next-gen compiler infrastructure
+brew "llvm"
 # Geospatial Data Abstraction Library
 brew "gdal"
 # GitHub command-line tool
@@ -115,7 +115,7 @@ cask "mullvad-vpn@beta"
 # Free and open-source RSS reader
 cask "netnewswire"
 # Verify system files structure, run miscellaneous maintenance and more
-cask "onyx"
+cask "onyx@beta"
 # Data science IDE
 cask "positron"
 # Scientific and technical publishing system built on Pandoc
@@ -146,3 +146,8 @@ cask "xquartz"
 cask "yubico-authenticator"
 # Video communication and virtual meeting platform
 cask "zoom"
+mas "1Password for Safari", id: 1569813296
+mas "HP", id: 1474276998
+mas "Kagi for Safari", id: 1622835804
+mas "Save to Raindrop.io", id: 1549370672
+mas "uBlock Origin Lite", id: 6745342698

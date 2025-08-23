@@ -3,6 +3,7 @@ alias ls='eza --long --header --icons=auto'
 alias python='python3'
 alias rmrf='rm -rf'
 alias zedit='$EDITOR $ZDOTDIR/.zshrc'
+alias updateR='Rscript -e "remotes::update_packages(upgrade = \"always\", build = TRUE)"'
 
 if [[ $(uname) == "Darwin" ]]; then
 	alias update='brew update && brew upgrade --force --greedy && brew cleanup'
