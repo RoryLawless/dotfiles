@@ -4,6 +4,8 @@ alias python='python3'
 alias rmrf='rm -rf'
 alias zedit='$EDITOR $ZDOTDIR/.zshrc'
 alias updateR='Rscript -e "remotes::update_packages(upgrade = \"always\", build = TRUE)"'
+alias codex='op run -- codex'
+alias borg='op run -- borg'
 
 if [[ $(uname) == "Darwin" ]]; then
 	alias update='brew update && brew upgrade --force --greedy && brew cleanup'

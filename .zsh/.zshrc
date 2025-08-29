@@ -10,16 +10,8 @@ elif [[ $(uname) == "Linux" ]] ; then
 
 fi
 
-autoload -Uz updateR
-
 PROMPT='%2~ %(?.%F{14}❯.%F{9}❯)%f '
-RPROMPT='%F{8}⏲ %*%f'
-
-TMOUT=1
-
-TRAPALRM() {
-    zle reset-prompt
-}
+RPROMPT='%F{8} %*%f'
 
 autoload -U compinit; compinit
 _comp_options+=(globdots)
@@ -40,7 +32,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
 #   - the correct directories to the PATH
 #   - auto-completion for the opam binary
 # This section can be safely removed at any time if needed.
-[[ ! -r '/Users/rory/.opam/opam-init/init.zsh' ]] || source '/Users/rory/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+[[ ! -r '$(HOME)/.opam/opam-init/init.zsh' ]] || source '$(HOME)/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
 
 
@@ -55,6 +47,5 @@ elif [[ $(uname) == "Linux" ]] ; then
 	source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 fi
-
 
 . "$HOME/.local/bin/env"

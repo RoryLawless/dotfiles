@@ -8,6 +8,10 @@ brew "openssl@3"
 brew "libgit2"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Command-line interface for SQLite
+brew "sqlite"
+# Deduplicating archiver with compression and authenticated encryption
+brew "borgbackup"
 # GNU internationalization (i18n) and localization (l10n) library
 brew "gettext"
 # Vector graphics library with cross-device output support
@@ -28,8 +32,6 @@ brew "gcc"
 brew "gnupg"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
-# Command-line interface for SQLite
-brew "sqlite"
 # Next-gen compiler infrastructure
 brew "llvm"
 # Geospatial Data Abstraction Library
@@ -88,8 +90,6 @@ cask "1password@beta"
 cask "appcleaner"
 # Display management tool
 cask "betterdisplay"
-# Anthropic's official Claude AI desktop app
-cask "claude"
 # Free app that makes your Internet safer
 cask "cloudflare-warp@beta"
 # Voice and text chat software
@@ -110,8 +110,6 @@ cask "google-drive"
 cask "logi-options+"
 # Support for Logitech G gear
 cask "logitech-g-hub"
-# VPN client
-cask "mullvad-vpn@beta"
 # Free and open-source RSS reader
 cask "netnewswire"
 # Verify system files structure, run miscellaneous maintenance and more
@@ -138,6 +136,8 @@ cask "the-unarchiver"
 cask "tor-browser"
 # Multimedia player
 cask "vlc"
+# Binary releases of VS Code without MS branding/telemetry/licensing
+cask "vscodium"
 # Native desktop client for WhatsApp
 cask "whatsapp"
 # Open-source version of the X.Org X Window System
