@@ -60,8 +60,7 @@
 		}
 	],
 	"chat.editor.fontSize": 12,
-	"console.fontFamily": "FiraCode Nerd Font",
-	"console.fontLigatures": "'ss10', 'cv12'",
+	"console.fontFamily": "CommitMono",
 	"console.fontSize": 12,
 	"dataExplorer.convertToCode": true,
 	"dataExplorer.Experimental": true,
@@ -75,16 +74,15 @@
 	"editor.bracketPairColorization.independentColorPoolPerBracketType": true,
 	"editor.cursorBlinking": "expand",
 	"editor.cursorStyle": "block",
-	"editor.fontFamily": "FiraCode Nerd Font",
-	"editor.fontLigatures": "'ss10', 'cv12'",
+	"editor.fontFamily": "CommitMono",
 	"editor.fontSize": 12,
 	"editor.formatOnPaste": true,
 	"editor.formatOnSave": true,
 	"editor.formatOnType": true,
-	"editor.inlineSuggest.fontFamily": "FiraCode Nerd Font",
+	"editor.inlineSuggest.fontFamily": "CommitMono",
 	"editor.inlineSuggest.syntaxHighlightingEnabled": true,
 	"editor.insertSpaces": false,
-	"editor.minimap.autohide": true,
+	"editor.minimap.autohide": "mouseover",
 	"editor.minimap.enabled": true,
 	"editor.renderWhitespace": "all",
 	"editor.rulers": [
@@ -116,6 +114,7 @@
 	"positron.assistant.streamingEdits.enable": true,
 	"positron.assistant.toolDetails.enable": true,
 	"positron.r.quietMode": true,
+	"positron.r.workspaceSymbols.includeCommentSections": true,
 	"positron.viewer.interactivePlotsInViewer": true,
 	"projectManager.git.baseFolders": [
 		"~/repos"
@@ -135,9 +134,7 @@
 	"terminal.integrated.defaultProfile.osx": "zsh",
 	"terminal.integrated.defaultProfile.windows": "PowerShell",
 	"terminal.integrated.enableImages": true,
-	"terminal.integrated.fontFamily": "FiraCode Nerd Font",
-	"terminal.integrated.fontLigatures.enabled": true,
-	"terminal.integrated.fontLigatures.featureSettings": "'ss10', 'cv12'",
+	"terminal.integrated.fontFamily": "CommitMono",
 	"terminal.integrated.fontSize": 12,
 	"terminal.integrated.smoothScrolling": true,
 	"terminal.integrated.suggest.enabled": true,
@@ -146,6 +143,5 @@
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.keybindings.rstudioKeybindings": true,
 	"workbench.productIconTheme": "fluent-icons",
-	"workbench.startupEditor": "none",
-	"positron.r.workspaceSymbols.includeCommentSections": true
+	"workbench.startupEditor": "none"
 }
