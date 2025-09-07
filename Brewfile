@@ -16,6 +16,8 @@ brew "borgbackup"
 brew "gettext"
 # Vector graphics library with cross-device output support
 brew "cairo"
+# CLI for Cloudflare API v4
+brew "cloudflare-cli4"
 # Cross-platform make
 brew "cmake"
 # Embeddable SQL OLAP Database Management System
@@ -32,8 +34,6 @@ brew "gcc"
 brew "gnupg"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
-# Next-gen compiler infrastructure
-brew "llvm"
 # Geospatial Data Abstraction Library
 brew "gdal"
 # GitHub command-line tool
@@ -48,6 +48,8 @@ brew "github-release"
 brew "huggingface-cli"
 # LLVM's OpenMP runtime library
 brew "libomp"
+# Next-gen compiler infrastructure
+brew "llvm"
 # LLVM Project Linker
 brew "lld"
 # Mac App Store command-line interface
@@ -114,6 +116,8 @@ cask "logitech-g-hub"
 cask "netnewswire"
 # Verify system files structure, run miscellaneous maintenance and more
 cask "onyx@beta"
+# Colour picker for colours onscreen
+cask "pika"
 # Data science IDE
 cask "positron"
 # Scientific and technical publishing system built on Pandoc
