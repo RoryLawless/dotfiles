@@ -60,7 +60,7 @@
 		}
 	],
 	"chat.editor.fontSize": 12,
-	"console.fontFamily": "CommitMono",
+	"console.fontFamily": "SF Mono",
 	"console.fontSize": 12,
 	"dataExplorer.convertToCode": true,
 	"dataExplorer.Experimental": true,
@@ -74,12 +74,12 @@
 	"editor.bracketPairColorization.independentColorPoolPerBracketType": true,
 	"editor.cursorBlinking": "expand",
 	"editor.cursorStyle": "block",
-	"editor.fontFamily": "CommitMono",
+	"editor.fontFamily": "SF Mono",
 	"editor.fontSize": 12,
 	"editor.formatOnPaste": true,
 	"editor.formatOnSave": true,
 	"editor.formatOnType": true,
-	"editor.inlineSuggest.fontFamily": "CommitMono",
+	"editor.inlineSuggest.fontFamily": "SF Mono",
 	"editor.inlineSuggest.syntaxHighlightingEnabled": true,
 	"editor.insertSpaces": false,
 	"editor.minimap.autohide": "mouseover",
@@ -134,7 +134,7 @@
 	"terminal.integrated.defaultProfile.osx": "zsh",
 	"terminal.integrated.defaultProfile.windows": "PowerShell",
 	"terminal.integrated.enableImages": true,
-	"terminal.integrated.fontFamily": "CommitMono",
+	"terminal.integrated.fontFamily": "SF Mono",
 	"terminal.integrated.fontSize": 12,
 	"terminal.integrated.smoothScrolling": true,
 	"terminal.integrated.suggest.enabled": true,
@@ -143,5 +143,7 @@
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.keybindings.rstudioKeybindings": true,
 	"workbench.productIconTheme": "fluent-icons",
-	"workbench.startupEditor": "none"
+	"workbench.startupEditor": "none",
+	"editor.fontLigatures": false,
+	"githubPullRequests.pullBranch": "never"
 }

@@ -34,6 +34,8 @@ brew "gcc"
 brew "gnupg"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
+# Next-gen compiler infrastructure
+brew "llvm"
 # Geospatial Data Abstraction Library
 brew "gdal"
 # GitHub command-line tool
@@ -48,8 +50,6 @@ brew "github-release"
 brew "huggingface-cli"
 # LLVM's OpenMP runtime library
 brew "libomp"
-# Next-gen compiler infrastructure
-brew "llvm"
 # LLVM Project Linker
 brew "lld"
 # Mac App Store command-line interface
@@ -100,8 +100,8 @@ cask "discord"
 cask "epic-games"
 # Web browser
 cask "firefox"
-cask "font-commit-mono"
-cask "font-fira-code-nerd-font"
+cask "font-fontawesome"
+cask "font-sf-mono"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Desktop client for GitHub repositories
