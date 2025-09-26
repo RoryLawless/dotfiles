@@ -4,12 +4,14 @@ tap "homebrew/core"
 brew "air"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
+# Command-line interface for SQLite
+brew "sqlite"
+# Next-gen compiler infrastructure
+brew "llvm"
 # C library of Git core methods that is re-entrant and linkable
 brew "libgit2"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# Command-line interface for SQLite
-brew "sqlite"
 # Deduplicating archiver with compression and authenticated encryption
 brew "borgbackup"
 # GNU internationalization (i18n) and localization (l10n) library
@@ -34,8 +36,6 @@ brew "gcc"
 brew "gnupg"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
-# Next-gen compiler infrastructure
-brew "llvm"
 # Geospatial Data Abstraction Library
 brew "gdal"
 # GitHub command-line tool
@@ -62,6 +62,8 @@ brew "nmap"
 brew "node"
 # OCaml package manager
 brew "opam"
+# Libosmium-based command-line tool for processing OpenStreetMap data
+brew "osmium-tool"
 # Software environment for statistical computing
 brew "r"
 # Safe, concurrent, practical language
@@ -70,6 +72,8 @@ brew "rust"
 brew "sbcl"
 # Markup-based typesetting system
 brew "typst"
+# Unidata unit conversion library
+brew "udunits"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
 # Internet file retriever
@@ -96,28 +100,32 @@ cask "betterdisplay"
 cask "cloudflare-warp@beta"
 # Voice and text chat software
 cask "discord"
-# Launcher for *Epic Games* games
-cask "epic-games"
 # Web browser
 cask "firefox"
 cask "font-fontawesome"
 cask "font-sf-mono"
-# Terminal emulator that uses platform-native UI and GPU acceleration
-cask "ghostty"
 # Desktop client for GitHub repositories
 cask "github"
 # Client for the Google Drive storage service
 cask "google-drive"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2@beta"
+# Keyboard customiser
+cask "karabiner-elements"
 # Software for Logitech devices
 cask "logi-options+"
 # Support for Logitech G gear
 cask "logitech-g-hub"
+# VPN client
+cask "mullvad-vpn@beta"
 # Free and open-source RSS reader
 cask "netnewswire"
 # Verify system files structure, run miscellaneous maintenance and more
 cask "onyx@beta"
 # Colour picker for colours onscreen
 cask "pika"
+# Browse, manage, inspect containers and images
+cask "podman-desktop"
 # Data science IDE
 cask "positron"
 # Scientific and technical publishing system built on Pandoc
@@ -138,6 +146,8 @@ cask "steam"
 cask "the-unarchiver"
 # Web browser focusing on security
 cask "tor-browser"
+# Keyboard configurator
+cask "via"
 # Multimedia player
 cask "vlc"
 # Binary releases of VS Code without MS branding/telemetry/licensing
@@ -155,3 +165,6 @@ mas "HP", id: 1474276998
 mas "Kagi for Safari", id: 1622835804
 mas "Save to Raindrop.io", id: 1549370672
 mas "uBlock Origin Lite", id: 6745342698
+vscode "1password.op-vscode"
+vscode "anthropic.claude-code"
+vscode "ocamllabs.ocaml-platform"

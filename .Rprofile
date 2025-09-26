@@ -1,4 +1,4 @@
-# enable devtools in interactive sessions
+# import packages in interactive sessions
 if (interactive()) {
 	suppressMessages(require(devtools))
 	suppressMessages(require(usethis))
@@ -13,19 +13,13 @@ options(
 	warnPartialMatchArgs = TRUE,
 	warnPartialMatchDollar = TRUE,
 	warnPartialMatchAttr = TRUE,
-	# fancy quotes are annoying and lead to
-	# 'copy + paste' bugs / frustrations
+	showWarnCalls = TRUE,
 	useFancyQuotes = FALSE,
-	# print only 250 elements by default
 	max.print = 250,
 	setWidthOnResize = TRUE,
 	repos = c(
-		CRAN = if (grepl("linux", Sys.getenv("R_PLATFORM"))) {
-			"https://packagemanager.posit.co/cran/__linux__/bookworm/latest"
-		} else {
-			"https://packagemanager.posit.co/cran/latest"
-		},
-		cmdstanr = "https://stan-dev.r-universe.dev"
+		CRAN = "https://packagemanager.posit.co/cran/latest",
+		RMULTIVERSE = "https://community.r-multiverse.org"
 	),
 	scipen = 999,
 	tigris_use_cache = TRUE
