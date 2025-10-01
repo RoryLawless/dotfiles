@@ -145,5 +145,9 @@
 	"workbench.productIconTheme": "fluent-icons",
 	"workbench.startupEditor": "none",
 	"editor.fontLigatures": false,
-	"githubPullRequests.pullBranch": "never"
+	"githubPullRequests.pullBranch": "never",
+	"editor.autoIndentOnPaste": true,
+	"editor.wordWrap": "on",
+	"editor.wrapOnEscapedLineFeeds": true,
+	"editor.wrappingStrategy": "advanced"
 }
