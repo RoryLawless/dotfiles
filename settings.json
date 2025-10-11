@@ -128,7 +128,7 @@
 	"rewrap.autoWrap.enabled": true,
 	"rewrap.reformat": true,
 	"rewrap.wrappingColumn": 80,
-	"terminal.external.osxExec": "Ghostty.app",
+	"terminal.external.osxExec": "/Applications/iTerm.app",
 	"terminal.external.windowsExec": "%UserProfile%/AppData/Local/Microsoft/WindowsApps/wt.exe",
 	"terminal.integrated.defaultProfile.linux": "zsh",
 	"terminal.integrated.defaultProfile.osx": "zsh",
@@ -149,5 +149,6 @@
 	"editor.autoIndentOnPaste": true,
 	"editor.wordWrap": "on",
 	"editor.wrapOnEscapedLineFeeds": true,
-	"editor.wrappingStrategy": "advanced"
+	"editor.wrappingStrategy": "advanced",
+	"claude-code.useNodeExecution": true
 }
