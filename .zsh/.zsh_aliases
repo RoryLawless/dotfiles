@@ -1,5 +1,5 @@
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME/'
-alias ls='eza --long --header --icons=auto'
+alias ls='eza --long --header --icons=never'
 alias python='python3'
 alias rmrf='rm -rf'
 alias zedit='$EDITOR $ZDOTDIR/.zshrc'

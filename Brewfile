@@ -48,6 +48,8 @@ brew "git-lfs"
 brew "github-release"
 # Client library for huggingface.co hub
 brew "huggingface-cli"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
 # LLVM's OpenMP runtime library
 brew "libomp"
 # LLVM Project Linker
@@ -96,6 +98,8 @@ cask "1password@beta"
 cask "appcleaner"
 # Display management tool
 cask "betterdisplay"
+# OpenAI's official browser with ChatGPT built in
+cask "chatgpt-atlas"
 # Free app that makes your Internet safer
 cask "cloudflare-warp@beta"
 # Voice and text chat software
@@ -120,6 +124,8 @@ cask "logitech-g-hub"
 cask "mullvad-vpn@beta"
 # Free and open-source RSS reader
 cask "netnewswire"
+# Cloud gaming platform
+cask "nvidia-geforce-now"
 # Verify system files structure, run miscellaneous maintenance and more
 cask "onyx@beta"
 # Colour picker for colours onscreen
@@ -164,7 +170,9 @@ mas "1Password for Safari", id: 1569813296
 mas "HP", id: 1474276998
 mas "Kagi for Safari", id: 1622835804
 mas "Save to Raindrop.io", id: 1549370672
+mas "Teleparty For Safari", id: 6471985961
 mas "uBlock Origin Lite", id: 6745342698
 vscode "1password.op-vscode"
+vscode "alefragnani.project-manager"
 vscode "anthropic.claude-code"
 vscode "ocamllabs.ocaml-platform"
