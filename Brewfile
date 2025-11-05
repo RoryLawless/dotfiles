@@ -36,6 +36,8 @@ brew "gcc"
 brew "gnupg"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
+# Optimized BLAS library
+brew "openblas"
 # Geospatial Data Abstraction Library
 brew "gdal"
 # GitHub command-line tool
@@ -46,8 +48,6 @@ brew "git"
 brew "git-lfs"
 # Create and edit releases on Github (and upload artifacts)
 brew "github-release"
-# Client library for huggingface.co hub
-brew "huggingface-cli"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # LLVM's OpenMP runtime library
@@ -58,20 +58,14 @@ brew "lld"
 brew "mas"
 # Hash utilities
 brew "md5sha1sum"
-# Port scanning utility for large networks
-brew "nmap"
-# Platform built on V8 to build network applications
+# Open-source, cross-platform JavaScript runtime environment
 brew "node"
 # OCaml package manager
 brew "opam"
-# Libosmium-based command-line tool for processing OpenStreetMap data
-brew "osmium-tool"
 # Software environment for statistical computing
 brew "r"
 # Safe, concurrent, practical language
 brew "rust"
-# Steel Bank Common Lisp system
-brew "sbcl"
 # Markup-based typesetting system
 brew "typst"
 # Unidata unit conversion library
@@ -94,12 +88,14 @@ brew "a2-ai/tap/rv"
 cask "1password-cli@beta"
 # Password manager
 cask "1password@beta"
+# Image editing and design software
+cask "affinity"
 # Application uninstaller
 cask "appcleaner"
 # Display management tool
 cask "betterdisplay"
-# OpenAI's official browser with ChatGPT built in
-cask "chatgpt-atlas"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
 # Free app that makes your Internet safer
 cask "cloudflare-warp@beta"
 # Voice and text chat software
@@ -108,12 +104,12 @@ cask "discord"
 cask "firefox"
 cask "font-fontawesome"
 cask "font-sf-mono"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
 # Desktop client for GitHub repositories
 cask "github"
 # Client for the Google Drive storage service
 cask "google-drive"
-# Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2@beta"
 # Keyboard customiser
 cask "karabiner-elements"
 # Software for Logitech devices
@@ -124,14 +120,10 @@ cask "logitech-g-hub"
 cask "mullvad-vpn@beta"
 # Free and open-source RSS reader
 cask "netnewswire"
-# Cloud gaming platform
-cask "nvidia-geforce-now"
 # Verify system files structure, run miscellaneous maintenance and more
 cask "onyx@beta"
 # Colour picker for colours onscreen
 cask "pika"
-# Browse, manage, inspect containers and images
-cask "podman-desktop"
 # Data science IDE
 cask "positron"
 # Scientific and technical publishing system built on Pandoc
@@ -140,22 +132,14 @@ cask "quarto"
 cask "raindropio"
 # Data science software focusing on R and Python
 cask "rstudio"
-# Instant messaging application focusing on security
-cask "signal@beta"
 # Team communication and collaboration software
 cask "slack"
 # Music streaming service
 cask "spotify"
-# Video game digital distribution service
-cask "steam"
-# Unpacks archive files
-cask "the-unarchiver"
 # Web browser focusing on security
 cask "tor-browser"
 # Keyboard configurator
 cask "via"
-# Multimedia player
-cask "vlc"
 # Binary releases of VS Code without MS branding/telemetry/licensing
 cask "vscodium"
 # Native desktop client for WhatsApp
