@@ -98,6 +98,8 @@ cask "betterdisplay"
 cask "chatgpt"
 # Free app that makes your Internet safer
 cask "cloudflare-warp@beta"
+# Write, edit, and chat about your code with AI
+cask "cursor"
 # Voice and text chat software
 cask "discord"
 # Web browser

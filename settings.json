@@ -49,6 +49,7 @@
 	"editor.wrapOnEscapedLineFeeds": true,
 	"editor.wrappingStrategy": "advanced",
 	"extensions.closeExtensionDetailsOnViewChange": true,
+	"extensions.ignoreRecommendations": true,
 	"files.associations": {
 		"renv.lock": "json"
 	},
@@ -73,9 +74,9 @@
 	],
 	"python.quietMode": true,
 	"python.terminal.shellIntegration.enabled": true,
-	"quarto.cells.background.color": "useTheme",
-	"quarto.render.previewType": "external",
 	"quarto.render.renderOnSave": true,
+	"quarto.render.renderOnSaveShiny": false,
+	"redhat.telemetry.enabled": false,
 	"terminal.external.osxExec": "/Applications/Ghostty.app",
 	"terminal.external.windowsExec": "%UserProfile%/AppData/Local/Microsoft/WindowsApps/wt.exe",
 	"terminal.integrated.cursorBlinking": true,
@@ -87,10 +88,10 @@
 	"terminal.integrated.fontSize": 12,
 	"terminal.integrated.smoothScrolling": true,
 	"terminal.integrated.suggest.enabled": true,
-	"update.positron.channel": "dailies",
+	"update.positron.channel": "releases",
 	"window.autoDetectColorScheme": true,
-	"window.newWindowProfile": "Default",
 	"workbench.editor.empty.hint": "hidden",
 	"workbench.keybindings.rstudioKeybindings": true,
-	"workbench.startupEditor": "none"
+	"workbench.startupEditor": "none",
+	"python-envs.defaultEnvManager": "ms-python.python:uv"
 }
