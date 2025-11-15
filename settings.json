@@ -11,10 +11,7 @@
 		"editor.formatOnSave": true,
 		"editor.formatOnType": true
 	},
-	"chat.editor.fontSize": 12,
 	"claudeCode.useTerminal": true,
-	"console.fontFamily": "SF Mono",
-	"console.fontSize": 12,
 	"dataExplorer.summaryCollapsed": true,
 	"diffEditor.codeLens": true,
 	"diffEditor.experimental.showMoves": true,
@@ -26,21 +23,15 @@
 	"editor.bracketPairColorization.independentColorPoolPerBracketType": true,
 	"editor.cursorBlinking": "expand",
 	"editor.cursorStyle": "block",
-	"editor.fontFamily": "SF Mono",
-	"editor.fontSize": 12,
 	"editor.formatOnPaste": true,
 	"editor.formatOnSave": true,
 	"editor.formatOnType": true,
-	"editor.inlineSuggest.fontFamily": "SF Mono",
 	"editor.inlineSuggest.syntaxHighlightingEnabled": true,
 	"editor.insertSpaces": false,
-	"editor.minimap.autohide": "mouseover",
 	"editor.minimap.enabled": true,
 	"editor.renderWhitespace": "all",
 	"editor.rulers": [
-		80,
-		100,
-		120
+		80
 	],
 	"editor.smoothScrolling": true,
 	"editor.tabCompletion": "on",
@@ -58,10 +49,8 @@
 	"git.defaultCloneDirectory": "~/repos",
 	"git.enableCommitSigning": true,
 	"git.fetchOnPull": true,
-	"githubPullRequests.pullBranch": "never",
 	"http.electronFetch": true,
 	"http.experimental.systemCertificatesV2": true,
-	"markdown.preview.fontSize": 12,
 	"notebook.consolidatedRunButton": true,
 	"notebook.diff.experimental.toggleInline": true,
 	"notebook.diff.overviewRuler": true,
@@ -72,10 +61,10 @@
 	"projectManager.git.baseFolders": [
 		"~/repos"
 	],
+	"python-envs.defaultEnvManager": "ms-python.python:uv",
 	"python.quietMode": true,
 	"python.terminal.shellIntegration.enabled": true,
 	"quarto.render.renderOnSave": true,
-	"quarto.render.renderOnSaveShiny": false,
 	"redhat.telemetry.enabled": false,
 	"terminal.external.osxExec": "/Applications/Ghostty.app",
 	"terminal.external.windowsExec": "%UserProfile%/AppData/Local/Microsoft/WindowsApps/wt.exe",
@@ -84,14 +73,10 @@
 	"terminal.integrated.defaultProfile.osx": "zsh",
 	"terminal.integrated.defaultProfile.windows": "PowerShell",
 	"terminal.integrated.enableImages": true,
-	"terminal.integrated.fontFamily": "SF Mono",
-	"terminal.integrated.fontSize": 12,
 	"terminal.integrated.smoothScrolling": true,
 	"terminal.integrated.suggest.enabled": true,
 	"update.positron.channel": "releases",
 	"window.autoDetectColorScheme": true,
-	"workbench.editor.empty.hint": "hidden",
 	"workbench.keybindings.rstudioKeybindings": true,
-	"workbench.startupEditor": "none",
-	"python-envs.defaultEnvManager": "ms-python.python:uv"
+	"workbench.startupEditor": "none"
 }

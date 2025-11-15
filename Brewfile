@@ -44,8 +44,6 @@ brew "gdal"
 brew "gh"
 # Distributed revision control system
 brew "git"
-# Git extension for versioning large files
-brew "git-lfs"
 # Create and edit releases on Github (and upload artifacts)
 brew "github-release"
 # Lightweight and flexible command-line JSON processor
@@ -98,14 +96,13 @@ cask "betterdisplay"
 cask "chatgpt"
 # Free app that makes your Internet safer
 cask "cloudflare-warp@beta"
-# Write, edit, and chat about your code with AI
-cask "cursor"
 # Voice and text chat software
 cask "discord"
+# Monitor resolution and settings manager
+cask "displaybuddy"
 # Web browser
 cask "firefox"
 cask "font-fontawesome"
-cask "font-sf-mono"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Desktop client for GitHub repositories
