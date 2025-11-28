@@ -44,8 +44,6 @@ brew "gdal"
 brew "gh"
 # Distributed revision control system
 brew "git"
-# Create and edit releases on Github (and upload artifacts)
-brew "github-release"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # LLVM's OpenMP runtime library
@@ -94,6 +92,8 @@ cask "appcleaner"
 cask "betterdisplay"
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
+# Anthropic's official Claude AI desktop app
+cask "claude"
 # Free app that makes your Internet safer
 cask "cloudflare-warp@beta"
 # Voice and text chat software
@@ -106,15 +106,13 @@ cask "font-fontawesome"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Desktop client for GitHub repositories
-cask "github"
+cask "github@beta"
 # Client for the Google Drive storage service
 cask "google-drive"
 # Keyboard customiser
 cask "karabiner-elements"
-# Software for Logitech devices
-cask "logi-options+"
-# Support for Logitech G gear
-cask "logitech-g-hub"
+# Customise mouse behavior
+cask "linearmouse"
 # VPN client
 cask "mullvad-vpn@beta"
 # Free and open-source RSS reader
@@ -131,22 +129,18 @@ cask "quarto"
 cask "raindropio"
 # Data science software focusing on R and Python
 cask "rstudio"
-# Team communication and collaboration software
-cask "slack"
 # Music streaming service
 cask "spotify"
-# Web browser focusing on security
-cask "tor-browser"
 # Keyboard configurator
 cask "via"
-# Binary releases of VS Code without MS branding/telemetry/licensing
-cask "vscodium"
 # Native desktop client for WhatsApp
 cask "whatsapp"
 # Open-source version of the X.Org X Window System
 cask "xquartz"
 # Application for generating TOTP and HOTP codes
 cask "yubico-authenticator"
+# Multiplayer code editor
+cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "1Password for Safari", id: 1569813296
@@ -155,7 +149,3 @@ mas "Kagi for Safari", id: 1622835804
 mas "Save to Raindrop.io", id: 1549370672
 mas "Teleparty For Safari", id: 6471985961
 mas "uBlock Origin Lite", id: 6745342698
-vscode "1password.op-vscode"
-vscode "alefragnani.project-manager"
-vscode "anthropic.claude-code"
-vscode "ocamllabs.ocaml-platform"
