@@ -1,14 +1,6 @@
 
-if [[ $(uname) == "Darwin" ]] ; then
-
-	fpath+=("$(brew --prefix)/share/zsh/site-functions"
+fpath+=("$(brew --prefix)/share/zsh/site-functions"
 			"$ZDOTDIR/.zshfn/")
-		
-elif [[ $(uname) == "Linux" ]] ; then
-
-	fpath+=("$ZDOTDIR/.zshfn/")
-
-fi
 
 PROMPT='%2~ %(?.%F{14}❯.%F{9}❯)%f '
 RPROMPT='%F{8} %*%f'
@@ -27,17 +19,8 @@ source $ZDOTDIR/.zsh_aliases
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
 
-if [[ $(uname) == "Darwin" ]] ; then
-
-	source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-	source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-elif [[ $(uname) == "Linux" ]] ; then
-
-	source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-	source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-fi
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 . "$HOME/.local/bin/env"
 

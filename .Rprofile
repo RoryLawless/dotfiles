@@ -18,7 +18,7 @@ options(
 	max.print = 250,
 	setWidthOnResize = TRUE,
 	repos = c(
-		CRAN = "https://packagemanager.posit.co/cran/latest",
+		CRAN = "https://cloud.r-project.org/",
 		RMULTIVERSE = "https://community.r-multiverse.org"
 	),
 	scipen = 999,

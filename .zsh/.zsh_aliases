@@ -4,15 +4,8 @@ alias python='python3'
 alias rmrf='rm -rf'
 alias zedit='$EDITOR $ZDOTDIR/.zshrc'
 alias updateR='Rscript -e "remotes::update_packages(upgrade = \"always\", build = TRUE)"'
-alias codex='op run -- codex'
+# alias codex='op run -- codex'
 alias borg='op run -- borg'
-
-if [[ $(uname) == "Darwin" ]]; then
-	alias update='brew update && brew upgrade --force --greedy && brew cleanup'
-	alias positron='open /Applications/Positron.app'
-        alias cat='bat'
-elif [[ $(uname) == "Linux" ]]; then
-	alias update='sudo apt update && sudo apt upgrade && sudo apt autoclean'
-     	alias cat='batcat'
-	alias claude="/home/rory/.claude/local/claude"
-fi
+alias update='brew update && brew upgrade --force --greedy && brew cleanup'
+alias positron='open /Applications/Positron.app'
+alias cat='bat'

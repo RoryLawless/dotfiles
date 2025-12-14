@@ -1,4 +1,5 @@
 tap "a2-ai/tap"
+tap "borgbackup/tap"
 tap "homebrew/core"
 # Fast and opinionated formatter for R code
 brew "air"
@@ -12,14 +13,10 @@ brew "llvm"
 brew "libgit2"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# Deduplicating archiver with compression and authenticated encryption
-brew "borgbackup"
 # GNU internationalization (i18n) and localization (l10n) library
 brew "gettext"
 # Vector graphics library with cross-device output support
 brew "cairo"
-# CLI for Cloudflare API v4
-brew "cloudflare-cli4"
 # Cross-platform make
 brew "cmake"
 # Embeddable SQL OLAP Database Management System
@@ -32,12 +29,10 @@ brew "eza"
 brew "ffmpeg"
 # GNU compiler collection
 brew "gcc"
-# GNU Pretty Good Privacy (PGP) package
+# GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
-# Optimized BLAS library
-brew "openblas"
 # Geospatial Data Abstraction Library
 brew "gdal"
 # GitHub command-line tool
@@ -54,14 +49,10 @@ brew "lld"
 brew "mas"
 # Hash utilities
 brew "md5sha1sum"
-# Open-source, cross-platform JavaScript runtime environment
-brew "node"
 # OCaml package manager
 brew "opam"
 # Software environment for statistical computing
 brew "r"
-# Safe, concurrent, practical language
-brew "rust"
 # Markup-based typesetting system
 brew "typst"
 # Unidata unit conversion library
@@ -80,26 +71,22 @@ brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 # rv - a fast R package installer
 brew "a2-ai/tap/rv"
-# Command-line helper for the 1Password password manager
-cask "1password-cli@beta"
-# Password manager
-cask "1password@beta"
-# Image editing and design software
-cask "affinity"
+# Deduplicating archiver with compression and authenticated encryption
+brew "borgbackup/tap/borgbackup-fuse"
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
+# Command-line interface for 1Password
+cask "1password-cli"
 # Application uninstaller
 cask "appcleaner"
-# Display management tool
-cask "betterdisplay"
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
 # Anthropic's official Claude AI desktop app
 cask "claude"
-# Free app that makes your Internet safer
-cask "cloudflare-warp@beta"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
 # Voice and text chat software
 cask "discord"
-# Monitor resolution and settings manager
-cask "displaybuddy"
 # Web browser
 cask "firefox"
 cask "font-fontawesome"
@@ -107,14 +94,12 @@ cask "font-fontawesome"
 cask "ghostty"
 # Desktop client for GitHub repositories
 cask "github@beta"
-# Client for the Google Drive storage service
-cask "google-drive"
 # Keyboard customiser
 cask "karabiner-elements"
-# Customise mouse behavior
-cask "linearmouse"
-# VPN client
-cask "mullvad-vpn@beta"
+# Software for Logitech devices
+cask "logi-options+"
+# File system integration
+cask "macfuse"
 # Free and open-source RSS reader
 cask "netnewswire"
 # Verify system files structure, run miscellaneous maintenance and more
@@ -123,20 +108,18 @@ cask "onyx@beta"
 cask "pika"
 # Data science IDE
 cask "positron"
+# Client for Proton Drive
+cask "proton-drive"
 # Scientific and technical publishing system built on Pandoc
 cask "quarto"
 # All-in-one bookmark manager
 cask "raindropio"
-# Data science software focusing on R and Python
-cask "rstudio"
+# Control your tools with a few keystrokes
+cask "raycast"
 # Music streaming service
 cask "spotify"
-# Keyboard configurator
-cask "via"
 # Native desktop client for WhatsApp
 cask "whatsapp"
-# Open-source version of the X.Org X Window System
-cask "xquartz"
 # Application for generating TOTP and HOTP codes
 cask "yubico-authenticator"
 # Multiplayer code editor
