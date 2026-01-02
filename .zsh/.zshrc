@@ -32,3 +32,8 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # This section can be safely removed at any time if needed.
 [[ ! -r '/Users/rory/.opam/opam-init/init.zsh' ]] || source '/Users/rory/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/rory/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions

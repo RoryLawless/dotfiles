@@ -33,24 +33,34 @@ brew "gcc"
 brew "gnupg"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
+# Cartographic Projections Library
+brew "proj"
 # Geospatial Data Abstraction Library
 brew "gdal"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
 brew "git"
+# Git extension for versioning large files
+brew "git-lfs"
+# Tool for glamorous shell scripts
+brew "gum"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # LLVM's OpenMP runtime library
 brew "libomp"
 # LLVM Project Linker
 brew "lld"
+# Powerful, lightweight programming language
+brew "lua"
 # Mac App Store command-line interface
 brew "mas"
 # Hash utilities
-brew "md5sha1sum"
+brew "md5sha1sum", link: true
 # OCaml package manager
 brew "opam"
+# Send emails from your terminal
+brew "pop"
 # Software environment for statistical computing
 brew "r"
 # Markup-based typesetting system
@@ -87,6 +97,8 @@ cask "claude"
 cask "codex"
 # Voice and text chat software
 cask "discord"
+# App to build and share containerised applications and microservices
+cask "docker-desktop"
 # Web browser
 cask "firefox"
 cask "font-fontawesome"
@@ -104,8 +116,6 @@ cask "macfuse"
 cask "netnewswire"
 # Verify system files structure, run miscellaneous maintenance and more
 cask "onyx@beta"
-# Colour picker for colours onscreen
-cask "pika"
 # Data science IDE
 cask "positron"
 # Client for Proton Drive
@@ -129,6 +139,7 @@ cask "zoom"
 mas "1Password for Safari", id: 1569813296
 mas "HP", id: 1474276998
 mas "Kagi for Safari", id: 1622835804
+mas "Muse", id: 1501563902
 mas "Save to Raindrop.io", id: 1549370672
 mas "Teleparty For Safari", id: 6471985961
 mas "uBlock Origin Lite", id: 6745342698
