@@ -61,7 +61,6 @@
 	],
 	"python.pyrefly.disableLanguageServices": true,
 	"python.terminal.shellIntegration.enabled": true,
-	"redhat.telemetry.enabled": false,
 	"rewrap.autoWrap.enabled": true,
 	"rewrap.doubleSentenceSpacing": true,
 	"rewrap.reformat": true,

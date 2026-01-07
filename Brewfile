@@ -37,8 +37,6 @@ brew "pkgconf"
 brew "proj"
 # Geospatial Data Abstraction Library
 brew "gdal"
-# GitHub command-line tool
-brew "gh"
 # Distributed revision control system
 brew "git"
 # Git extension for versioning large files
@@ -53,8 +51,6 @@ brew "libomp"
 brew "lld"
 # Powerful, lightweight programming language
 brew "lua"
-# Mac App Store command-line interface
-brew "mas"
 # Hash utilities
 brew "md5sha1sum", link: true
 # OCaml package manager
@@ -89,12 +85,6 @@ cask "1password"
 cask "1password-cli"
 # Application uninstaller
 cask "appcleaner"
-# OpenAI's official ChatGPT desktop app
-cask "chatgpt"
-# Anthropic's official Claude AI desktop app
-cask "claude"
-# OpenAI's coding agent that runs in your terminal
-cask "codex"
 # Voice and text chat software
 cask "discord"
 # App to build and share containerised applications and microservices
@@ -104,8 +94,6 @@ cask "firefox"
 cask "font-fontawesome"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-# Desktop client for GitHub repositories
-cask "github@beta"
 # Keyboard customiser
 cask "karabiner-elements"
 # Software for Logitech devices
@@ -114,8 +102,6 @@ cask "logi-options+"
 cask "macfuse"
 # Free and open-source RSS reader
 cask "netnewswire"
-# Verify system files structure, run miscellaneous maintenance and more
-cask "onyx@beta"
 # Data science IDE
 cask "positron"
 # Client for Proton Drive
@@ -136,10 +122,3 @@ cask "yubico-authenticator"
 cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
-mas "1Password for Safari", id: 1569813296
-mas "HP", id: 1474276998
-mas "Kagi for Safari", id: 1622835804
-mas "Muse", id: 1501563902
-mas "Save to Raindrop.io", id: 1549370672
-mas "Teleparty For Safari", id: 6471985961
-mas "uBlock Origin Lite", id: 6745342698
