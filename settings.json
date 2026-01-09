@@ -11,9 +11,12 @@
 		"editor.formatOnSave": true,
 		"editor.formatOnType": true
 	},
-	"chat.checkpoints.showFileChanges": true,
-	"chat.edits2.enabled": true,
-	"chat.useCopilotParticipantsWithOtherProviders": true,
+	"[python]": {
+		"editor.defaultFormatter": "charliermarsh.ruff",
+		"editor.formatOnPaste": true,
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true
+	},
 	"dataExplorer.summaryCollapsed": true,
 	"diffEditor.codeLens": true,
 	"editor.autoIndentOnPaste": true,
@@ -43,18 +46,8 @@
 	"git.defaultCloneDirectory": "~/repos",
 	"git.enableCommitSigning": true,
 	"git.fetchOnPull": true,
-	"github.copilot.chat.alternateGptPrompt.enabled": true,
-	"github.copilot.chat.anthropic.thinking.enabled": true,
-	"github.copilot.chat.anthropic.tools.websearch.enabled": true,
-	"github.copilot.chat.codesearch.enabled": true,
-	"github.copilot.chat.newWorkspace.useContext7": true,
-	"github.copilot.chat.tools.memory.enabled": true,
 	"notebook.lineNumbers": "on",
 	"notebook.workingDirectory": "${workspaceFolder}",
-	"positron.assistant.alwaysIncludeCopilotTools": true,
-	"positron.assistant.enable": true,
-	"positron.assistant.notebookMode.enable": true,
-	"positron.assistant.toolDetails.enable": true,
 	"positron.r.workspaceSymbols.includeCommentSections": true,
 	"python.interpreters.exclude": [
 		"/usr/bin/python3"
@@ -62,15 +55,11 @@
 	"python.pyrefly.disableLanguageServices": true,
 	"python.terminal.shellIntegration.enabled": true,
 	"rewrap.autoWrap.enabled": true,
-	"rewrap.doubleSentenceSpacing": true,
 	"rewrap.reformat": true,
 	"terminal.external.osxExec": "/Applications/Ghostty.app",
 	"terminal.integrated.defaultProfile.osx": "zsh",
 	"terminal.integrated.smoothScrolling": true,
 	"terminal.integrated.suggest.enabled": true,
 	"window.autoDetectColorScheme": true,
-	"workbench.keybindings.rstudioKeybindings": true,
-	"[yaml]": {
-		"editor.defaultFormatter": "quarto.quarto"
-	}
+	"workbench.keybindings.rstudioKeybindings": true
 }
