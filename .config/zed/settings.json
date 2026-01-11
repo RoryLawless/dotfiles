@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "soft_wrap": "preferred_line_length",
   "languages": {
     "R": {
       "language_servers": ["air", "r_language_server"],
@@ -30,9 +31,9 @@
   "redact_private_values": false,
   "disable_ai": true,
   "session": {
+    "trust_all_worktrees": false,
     "restore_unsaved_buffers": true,
   },
-  "restore_on_startup": "last_session",
   "telemetry": {
     "diagnostics": false,
     "metrics": false,

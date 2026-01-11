@@ -71,8 +71,6 @@ brew "wget"
 brew "yt-dlp"
 # General-purpose lossless data-compression library
 brew "zlib", link: true
-# Fish-like fast/unobtrusive autosuggestions for zsh
-brew "zsh-autosuggestions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
 # rv - a fast R package installer
@@ -87,8 +85,6 @@ cask "1password-cli"
 cask "appcleaner"
 # Voice and text chat software
 cask "discord"
-# App to build and share containerised applications and microservices
-cask "docker-desktop"
 # Web browser
 cask "firefox"
 cask "font-fontawesome"
@@ -104,8 +100,6 @@ cask "macfuse"
 cask "netnewswire"
 # Data science IDE
 cask "positron"
-# Client for Proton Drive
-cask "proton-drive"
 # Scientific and technical publishing system built on Pandoc
 cask "quarto"
 # All-in-one bookmark manager
@@ -114,6 +108,8 @@ cask "raindropio"
 cask "raycast"
 # Music streaming service
 cask "spotify"
+# Mesh VPN based on WireGuard
+cask "tailscale-app"
 # Native desktop client for WhatsApp
 cask "whatsapp"
 # Application for generating TOTP and HOTP codes
