@@ -18,7 +18,6 @@
 		"editor.formatOnType": true
 	},
 	"dataExplorer.summaryCollapsed": true,
-	"diffEditor.codeLens": true,
 	"editor.autoIndentOnPaste": true,
 	"editor.bracketPairColorization.independentColorPoolPerBracketType": true,
 	"editor.cursorBlinking": "expand",

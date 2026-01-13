@@ -1,10 +1,13 @@
 tap "a2-ai/tap"
 tap "borgbackup/tap"
-tap "homebrew/core"
 # Fast and opinionated formatter for R code
 brew "air"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
+# Library for command-line editing
+brew "readline"
 # Command-line interface for SQLite
 brew "sqlite"
 # Next-gen compiler infrastructure
@@ -27,6 +30,8 @@ brew "emacs", restart_service: :changed
 brew "eza"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # GNU compiler collection
 brew "gcc"
 # GNU Privacy Guard (OpenPGP)
@@ -57,6 +62,8 @@ brew "md5sha1sum", link: true
 brew "opam"
 # Send emails from your terminal
 brew "pop"
+# Tool Command Language
+brew "tcl-tk"
 # Software environment for statistical computing
 brew "r"
 # Markup-based typesetting system
@@ -71,6 +78,8 @@ brew "wget"
 brew "yt-dlp"
 # General-purpose lossless data-compression library
 brew "zlib", link: true
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
 # rv - a fast R package installer

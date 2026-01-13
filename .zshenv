@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 export EDITOR="emacs"
-export ZDOTDIR="$HOME/.zsh"
 export BORG_REPO="op://Private/borg/username"
 export BORG_REMOTE_PATH=borg14
 export BORG_PASSPHRASE="op://Private/borg/password"
