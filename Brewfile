@@ -66,6 +66,8 @@ brew "pop"
 brew "tcl-tk"
 # Software environment for statistical computing
 brew "r"
+# Extremely fast Python type checker, written in Rust
+brew "ty"
 # Markup-based typesetting system
 brew "typst"
 # Unidata unit conversion library
