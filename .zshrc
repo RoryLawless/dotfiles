@@ -34,6 +34,7 @@ alias update='brew update && brew upgrade --force --greedy && brew cleanup'
 alias positron='open /Applications/Positron.app'
 alias cat='bat'
 alias pop='op run --no-masking -- pop --from $(gum choose "rory@mensahlawless.com" "rory@rorylawless.com" "rory@rorylawless.co.uk")'
+alias pext="jq '.[] | {name: .identifier.id, version, isPreReleaseVersion: .metadata.isPreReleaseVersion}' ~/.positron/extensions/extensions.json > positron-extensions.json"
 
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
