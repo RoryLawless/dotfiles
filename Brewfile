@@ -28,10 +28,12 @@ brew "duckdb"
 brew "emacs", restart_service: :changed
 # Modern, maintained replacement for ls
 brew "eza"
-# Play, record, convert, and stream audio and video
+# Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Replace zsh completion selection menu with fzf
+brew "fzf-tab"
 # GNU compiler collection
 brew "gcc"
 # GNU Privacy Guard (OpenPGP)
@@ -94,6 +96,8 @@ cask "1password"
 cask "1password-cli"
 # Application uninstaller
 cask "appcleaner"
+# Server and cloud storage browser
+cask "cyberduck"
 # Voice and text chat software
 cask "discord"
 # Web browser
@@ -105,6 +109,8 @@ cask "ghostty"
 cask "karabiner-elements"
 # Software for Logitech devices
 cask "logi-options+"
+# Support for Logitech G gear
+cask "logitech-g-hub"
 # File system integration
 cask "macfuse"
 # Free and open-source RSS reader
@@ -129,3 +135,5 @@ cask "yubico-authenticator"
 cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
+# Collect, organise, cite, and share research sources
+cask "zotero"
