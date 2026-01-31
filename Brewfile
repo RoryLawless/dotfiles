@@ -48,8 +48,6 @@ brew "gdal"
 brew "git"
 # Git extension for versioning large files
 brew "git-lfs"
-# Tool for glamorous shell scripts
-brew "gum"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # LLVM's OpenMP runtime library
@@ -62,8 +60,10 @@ brew "lua"
 brew "md5sha1sum", link: true
 # OCaml package manager
 brew "opam"
-# Send emails from your terminal
-brew "pop"
+# Development kit for the Java programming language
+brew "openjdk"
+# Tool for managing OCI containers and pods
+brew "podman"
 # Tool Command Language
 brew "tcl-tk"
 # Software environment for statistical computing
@@ -84,6 +84,8 @@ brew "yt-dlp"
 brew "zlib", link: true
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
+# Additional completion definitions for zsh
+brew "zsh-completions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
 # rv - a fast R package installer
@@ -96,10 +98,14 @@ cask "1password"
 cask "1password-cli"
 # Application uninstaller
 cask "appcleaner"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
 # Server and cloud storage browser
 cask "cyberduck"
 # Voice and text chat software
 cask "discord"
+# Launcher for *Epic Games* games
+cask "epic-games"
 # Web browser
 cask "firefox"
 cask "font-fontawesome"
@@ -115,6 +121,8 @@ cask "logitech-g-hub"
 cask "macfuse"
 # Free and open-source RSS reader
 cask "netnewswire"
+# Browse, manage, inspect containers and images
+cask "podman-desktop"
 # Data science IDE
 cask "positron"
 # Scientific and technical publishing system built on Pandoc
