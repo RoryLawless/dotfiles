@@ -30,6 +30,8 @@ brew "emacs", restart_service: :changed
 brew "eza"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
+# Implementation of the Unicode BiDi algorithm
+brew "fribidi"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Replace zsh completion selection menu with fzf
@@ -42,6 +44,8 @@ brew "gnupg"
 brew "pkgconf"
 # Cartographic Projections Library
 brew "proj"
+# LLVM's OpenMP runtime library
+brew "libomp"
 # Geospatial Data Abstraction Library
 brew "gdal"
 # Distributed revision control system
@@ -50,8 +54,8 @@ brew "git"
 brew "git-lfs"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# LLVM's OpenMP runtime library
-brew "libomp"
+# Fast and flexible C++ library for working with OpenStreetMap data
+brew "libosmium"
 # LLVM Project Linker
 brew "lld"
 # Powerful, lightweight programming language
@@ -62,6 +66,8 @@ brew "md5sha1sum", link: true
 brew "opam"
 # Development kit for the Java programming language
 brew "openjdk"
+# Libosmium-based command-line tool for processing OpenStreetMap data
+brew "osmium-tool"
 # Tool for managing OCI containers and pods
 brew "podman"
 # Tool Command Language
@@ -96,6 +102,8 @@ brew "borgbackup/tap/borgbackup-fuse"
 cask "1password"
 # Command-line interface for 1Password
 cask "1password-cli"
+# Local-first and end-to-end encrypted notes app
+cask "anytype"
 # Application uninstaller
 cask "appcleaner"
 # OpenAI's official ChatGPT desktop app
@@ -113,6 +121,8 @@ cask "font-fontawesome"
 cask "ghostty"
 # Keyboard customiser
 cask "karabiner-elements"
+# App to manage software development and track bugs
+cask "linear-linear"
 # Software for Logitech devices
 cask "logi-options+"
 # Support for Logitech G gear
