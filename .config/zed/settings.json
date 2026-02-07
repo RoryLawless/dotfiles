@@ -7,6 +7,14 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent_servers": {
+    "mistral-vibe": {
+      "type": "registry",
+    },
+  },
+  "edit_predictions": {
+    "provider": "codestral",
+  },
   "soft_wrap": "preferred_line_length",
   "languages": {
     "R": {
@@ -19,6 +27,9 @@
       "language_servers": ["tombi"],
       "use_on_type_format": false,
     },
+    "OCaml": {
+      "show_edit_predictions": false,
+    },
   },
   "jupyter": {
     "kernel_selections": {
@@ -29,7 +40,7 @@
   "colorize_brackets": true,
   "show_completions_on_input": true,
   "redact_private_values": false,
-  "disable_ai": true,
+  "disable_ai": false,
   "session": {
     "trust_all_worktrees": false,
     "restore_unsaved_buffers": true,

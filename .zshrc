@@ -26,13 +26,12 @@ export GIT_PS1_SHOWCOLORHINTS=true
 
 setopt PROMPT_SUBST
 
-
+alias borg='op run -- borg'
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME/'
 alias ls='eza --long --header --icons=never'
 alias python='python3'
-alias rmrf='trash'
+alias rmrf='rm -ri'
 alias updateR='Rscript -e "remotes::update_packages(upgrade = \"always\", build = TRUE)"'
-alias borg='op run -- borg'
 alias update='brew update && brew upgrade --force --greedy && brew cleanup'
 alias positron='open /Applications/Positron.app'
 alias cat='bat'
@@ -48,3 +47,6 @@ source $BREW_PREFIX/opt/fzf-tab/share/fzf-tab/fzf-tab.zsh
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
 source $BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export EDITOR="emacs"
+export VISUAL="$EDITOR"
