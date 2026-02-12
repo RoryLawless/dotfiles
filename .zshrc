@@ -1,4 +1,6 @@
 
+# Completions
+
 autoload -Uz compinit
 
 if type brew &>/dev/null; then
@@ -9,6 +11,8 @@ else
 fi
 
 _comp_options+=(globdots)
+
+# Setup git prompt
 
 source "$(brew --prefix git)/etc/bash_completion.d/git-prompt.sh"
 
@@ -26,6 +30,12 @@ export GIT_PS1_SHOWCOLORHINTS=true
 
 setopt PROMPT_SUBST
 
+# Environment vars for defaults
+export EDITOR="emacs"
+export VISUAL="$EDITOR"
+export GPG_TTY=$(tty)
+
+# Aliases
 alias borg='op run -- borg'
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME/'
 alias ls='eza --long --header --icons=never'
@@ -36,6 +46,7 @@ alias update='brew update && brew upgrade --force --greedy && brew cleanup'
 alias positron='open /Applications/Positron.app'
 alias cat='bat'
 
+# Extensions
 BREW_PREFIX=$(brew --prefix)
 
 source <(fzf --zsh)
@@ -47,6 +58,3 @@ source $BREW_PREFIX/opt/fzf-tab/share/fzf-tab/fzf-tab.zsh
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
 source $BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-export EDITOR="emacs"
-export VISUAL="$EDITOR"
