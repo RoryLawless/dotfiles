@@ -1,5 +1,6 @@
 tap "a2-ai/tap"
 tap "borgbackup/tap"
+tap "oven-sh/bun"
 # Fast and opinionated formatter for R code
 brew "air"
 # General-purpose data compression with high compression ratio
@@ -48,8 +49,14 @@ brew "proj"
 brew "libomp"
 # Geospatial Data Abstraction Library
 brew "gdal"
+# Interact with Google Gemini AI models from the command-line
+brew "gemini-cli"
+# GitHub command-line tool
+brew "gh"
 # Distributed revision control system
 brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
 # Git extension for versioning large files
 brew "git-lfs"
 # Lightweight and flexible command-line JSON processor
@@ -62,6 +69,10 @@ brew "lld"
 brew "lua"
 # Hash utilities
 brew "md5sha1sum", link: true
+# Minimal CLI coding agent
+brew "mistral-vibe"
+# General purpose programming language in the ML family
+brew "ocaml"
 # OCaml package manager
 brew "opam"
 # Development kit for the Java programming language
@@ -74,6 +85,8 @@ brew "podman"
 brew "tcl-tk"
 # Software environment for statistical computing
 brew "r"
+# Official tldr client written in Rust
+brew "tlrc"
 # Extremely fast Python type checker, written in Rust
 brew "ty"
 # Markup-based typesetting system
@@ -98,6 +111,8 @@ brew "zsh-syntax-highlighting"
 brew "a2-ai/tap/rv"
 # Deduplicating archiver with compression and authenticated encryption
 brew "borgbackup/tap/borgbackup-fuse"
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line interface for 1Password
@@ -108,6 +123,14 @@ cask "anytype"
 cask "appcleaner"
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
+# Anthropic's official Claude AI desktop app
+cask "claude"
+# Terminal-based AI coding assistant
+cask "claude-code"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
+# OpenAI's Codex desktop app for managing coding agents
+cask "codex-app"
 # Server and cloud storage browser
 cask "cyberduck"
 # Voice and text chat software
@@ -131,6 +154,8 @@ cask "logitech-g-hub"
 cask "macfuse"
 # Free and open-source RSS reader
 cask "netnewswire"
+# Podcast platform
+cask "pocket-casts"
 # Browse, manage, inspect containers and images
 cask "podman-desktop"
 # Data science IDE

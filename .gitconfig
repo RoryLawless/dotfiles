@@ -1,0 +1,57 @@
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[transfer]
+    fsckobjects = true
+[fetch]
+    fsckobjects = true
+    prune = true
+    prunetags = true
+    parallel = 0
+[receive]
+    fsckObjects = true
+[pull]
+    ff = only
+    rebase = true
+[merge]
+    ff = only
+    conflictstyle = zdiff3
+    tool = meld
+[color]
+    ui = auto
+[init]
+    defaultBranch = main
+[feature]
+    manyFiles = true
+[core]
+    editor = emacs
+    excludesFile = ~/.gitignore
+    pager = delta
+    autocrlf = false
+[gpg]
+    format = ssh
+[gpg "ssh"]
+    program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+    gpgsign = true
+[push]
+    default = simple
+    autoSetupRemote = true
+[log]
+    date = iso
+[url "ssh://git@codeberg.org/"]
+    insteadOf = cb:
+[url "git@github.com:"]
+    insteadOf = gh:
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+[branch]
+    sort = -committerdate
+[pack]
+    depth = 20
+[include]
+    path = ~/.gitconfig.local
