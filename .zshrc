@@ -67,6 +67,3 @@ source $BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # This section can be safely removed at any time if needed.
 [[ ! -r '/Users/rory/.opam/opam-init/init.zsh' ]] || source '/Users/rory/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
-
-# Added by Antigravity
-export PATH="/Users/rory/.antigravity/antigravity/bin:$PATH"
