@@ -40,7 +40,7 @@ alias borg='op run -- borg'
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME/'
 alias ls='eza --long --header --icons=never'
 alias python='python3'
-alias rmrf='rm -ri'
+alias rmrf='rm -rf'
 alias updateR='Rscript -e "remotes::update_packages(upgrade = \"always\", build = TRUE)"'
 alias update='brew update && brew upgrade --force --greedy && brew cleanup'
 alias positron='open /Applications/Positron.app'
@@ -67,3 +67,6 @@ source $BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # This section can be safely removed at any time if needed.
 [[ ! -r '/Users/rory/.opam/opam-init/init.zsh' ]] || source '/Users/rory/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
+
+# Added by Antigravity
+export PATH="/Users/rory/.antigravity/antigravity/bin:$PATH"

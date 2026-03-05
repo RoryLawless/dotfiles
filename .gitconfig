@@ -29,7 +29,7 @@
     editor = emacs
     excludesFile = ~/.gitignore
     pager = delta
-    autocrlf = false
+    autocrlf = input
 [gpg]
     format = ssh
 [gpg "ssh"]
