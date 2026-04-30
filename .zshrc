@@ -1,13 +1,10 @@
 
 # Completions
-
-autoload -Uz compinit
-
 if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-    compinit
-else
-    compinit -C
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
 fi
 
 _comp_options+=(globdots)
@@ -36,7 +33,6 @@ export VISUAL="$EDITOR"
 export GPG_TTY=$(tty)
 
 # Aliases
-alias borg='op run -- borg'
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME/'
 alias ls='eza --long --header --icons=never'
 alias python='python3'
@@ -46,20 +42,6 @@ alias update='brew update && brew upgrade --force --greedy && brew cleanup'
 alias positron='open /Applications/Positron.app'
 alias cat='bat'
 
-# Extensions
-BREW_PREFIX=$(brew --prefix)
-
-source <(fzf --zsh)
-
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-source $BREW_PREFIX/opt/fzf-tab/share/fzf-tab/fzf-tab.zsh
-
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
-source $BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-
 # BEGIN opam configuration
 # This is useful if you're using opam as it adds:
 #   - the correct directories to the PATH
@@ -67,3 +49,10 @@ source $BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # This section can be safely removed at any time if needed.
 [[ ! -r '/Users/rory/.opam/opam-init/init.zsh' ]] || source '/Users/rory/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
+
+# Extensions
+
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"

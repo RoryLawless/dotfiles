@@ -16,8 +16,7 @@
     ff = only
     rebase = true
 [merge]
-    ff = only
-    conflictstyle = zdiff3
+    conflictStyle = zdiff3
     tool = meld
 [color]
     ui = auto
@@ -27,9 +26,10 @@
     manyFiles = true
 [core]
     editor = emacs
-    excludesFile = ~/.gitignore
+	excludesfile = /Users/rory/.gitignore
     pager = delta
     autocrlf = input
+	attributesfile = /Users/rory/.gitattributes
 [gpg]
     format = ssh
 [gpg "ssh"]
@@ -41,10 +41,6 @@
     autoSetupRemote = true
 [log]
     date = iso
-[url "ssh://git@codeberg.org/"]
-    insteadOf = cb:
-[url "git@github.com:"]
-    insteadOf = gh:
 [interactive]
     diffFilter = delta --color-only
 [delta]
@@ -55,3 +51,6 @@
     depth = 20
 [include]
     path = ~/.gitconfig.local
+[merge "mergiraf"]
+    name = mergiraf
+    driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P -l %L

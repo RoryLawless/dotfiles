@@ -9,20 +9,28 @@ brew "xz"
 brew "openssl@3"
 # Library for command-line editing
 brew "readline"
-# Command-line interface for SQLite
-brew "sqlite"
 # Next-gen compiler infrastructure
 brew "llvm"
+# Official Amazon AWS command-line interface
+brew "awscli"
 # C library of Git core methods that is re-entrant and linkable
 brew "libgit2"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Simple wrapper script for the Borg backup software
+brew "borgmatic"
 # GNU internationalization (i18n) and localization (l10n) library
 brew "gettext"
 # Vector graphics library with cross-device output support
 brew "cairo"
+# CLI tool for Cloudflare Workers
+brew "cloudflare-wrangler"
 # Cross-platform make
 brew "cmake"
+# Development kit for the Java programming language
+brew "openjdk"
+# Command-line interface for Cyberduck (a multi-protocol file transfer tool)
+brew "duck"
 # Embeddable SQL OLAP Database Management System
 brew "duckdb"
 # GNU Emacs text editor
@@ -33,10 +41,6 @@ brew "eza"
 brew "ffmpeg"
 # Implementation of the Unicode BiDi algorithm
 brew "fribidi"
-# Command-line fuzzy finder written in Go
-brew "fzf"
-# Replace zsh completion selection menu with fzf
-brew "fzf-tab"
 # GNU compiler collection
 brew "gcc"
 # GNU Privacy Guard (OpenPGP)
@@ -49,8 +53,6 @@ brew "proj"
 brew "libomp"
 # Geospatial Data Abstraction Library
 brew "gdal"
-# Interact with Google Gemini AI models from the command-line
-brew "gemini-cli"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
@@ -59,6 +61,10 @@ brew "git"
 brew "git-delta"
 # Git extension for versioning large files
 brew "git-lfs"
+# Open-source GitLab command-line tool
+brew "glab"
+# Backup GMail (or other IMAP) accounts to disk
+brew "imap-backup"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Fast and flexible C++ library for working with OpenStreetMap data
@@ -69,22 +75,18 @@ brew "lld"
 brew "lua"
 # Hash utilities
 brew "md5sha1sum", link: true
-# Minimal CLI coding agent
-brew "mistral-vibe"
+# Syntax-aware git merge driver
+brew "mergiraf", args: ["HEAD"]
 # General purpose programming language in the ML family
 brew "ocaml"
 # OCaml package manager
 brew "opam"
-# Development kit for the Java programming language
-brew "openjdk"
-# Libosmium-based command-line tool for processing OpenStreetMap data
-brew "osmium-tool"
-# Tool for managing OCI containers and pods
-brew "podman"
 # Tool Command Language
 brew "tcl-tk"
 # Software environment for statistical computing
 brew "r"
+# 7-Zip is a file archiver with a high compression ratio
+brew "sevenzip"
 # Official tldr client written in Rust
 brew "tlrc"
 # Extremely fast Python type checker, written in Rust
@@ -107,8 +109,6 @@ brew "zsh-autosuggestions"
 brew "zsh-completions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-# rv - a fast R package installer
-brew "a2-ai/tap/rv"
 # Deduplicating archiver with compression and authenticated encryption
 brew "borgbackup/tap/borgbackup-fuse"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
@@ -117,8 +117,6 @@ brew "oven-sh/bun/bun"
 cask "1password"
 # Command-line interface for 1Password
 cask "1password-cli"
-# Local-first and end-to-end encrypted notes app
-cask "anytype"
 # Application uninstaller
 cask "appcleaner"
 # OpenAI's official ChatGPT desktop app
@@ -126,53 +124,53 @@ cask "chatgpt"
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # Terminal-based AI coding assistant
-cask "claude-code"
+cask "claude-code@latest"
 # OpenAI's coding agent that runs in your terminal
 cask "codex"
 # OpenAI's Codex desktop app for managing coding agents
 cask "codex-app"
-# Server and cloud storage browser
-cask "cyberduck"
 # Voice and text chat software
 cask "discord"
 # Launcher for *Epic Games* games
 cask "epic-games"
+# Collaborative team software
+cask "figma"
 # Web browser
 cask "firefox"
 cask "font-fontawesome"
-# Terminal emulator that uses platform-native UI and GPU acceleration
-cask "ghostty"
+# Desktop client for GitHub repositories
+cask "github"
+# Web browser
+cask "google-chrome"
+# Client for the Google Drive storage service
+cask "google-drive"
 # Keyboard customiser
 cask "karabiner-elements"
-# App to manage software development and track bugs
-cask "linear-linear"
+# GPU-based terminal emulator
+cask "kitty"
 # Software for Logitech devices
 cask "logi-options+"
 # Support for Logitech G gear
 cask "logitech-g-hub"
 # File system integration
 cask "macfuse"
+# Mounts servers and cloud storages as a disk on the desktop
+cask "mountain-duck"
 # Free and open-source RSS reader
 cask "netnewswire"
-# Podcast platform
-cask "pocket-casts"
-# Browse, manage, inspect containers and images
-cask "podman-desktop"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
 # Data science IDE
 cask "positron"
 # Scientific and technical publishing system built on Pandoc
 cask "quarto"
-# All-in-one bookmark manager
-cask "raindropio"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Music streaming service
 cask "spotify"
-# Mesh VPN based on WireGuard
-cask "tailscale-app"
 # Native desktop client for WhatsApp
 cask "whatsapp"
-# Application for generating TOTP and HOTP codes
+# Full-featured companion app to the YubiKey
 cask "yubico-authenticator"
 # Multiplayer code editor
 cask "zed"
