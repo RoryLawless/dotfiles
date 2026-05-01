@@ -26,14 +26,10 @@
     manyFiles = true
 [core]
     editor = emacs
-	excludesfile = /Users/rory/.gitignore
     pager = delta
     autocrlf = input
-	attributesfile = /Users/rory/.gitattributes
 [gpg]
     format = ssh
-[gpg "ssh"]
-    program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
     gpgsign = true
 [push]
