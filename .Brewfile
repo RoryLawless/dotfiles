@@ -1,16 +1,13 @@
-tap "a2-ai/tap"
 tap "borgbackup/tap"
 tap "oven-sh/bun"
 # Fast and opinionated formatter for R code
 brew "air"
-# General-purpose data compression with high compression ratio
-brew "xz"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
 # Library for command-line editing
 brew "readline"
-# Next-gen compiler infrastructure
-brew "llvm"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # C library of Git core methods that is re-entrant and linkable
@@ -27,32 +24,16 @@ brew "cairo"
 brew "cloudflare-wrangler"
 # Cross-platform make
 brew "cmake"
-# Development kit for the Java programming language
-brew "openjdk"
-# Command-line interface for Cyberduck (a multi-protocol file transfer tool)
-brew "duck"
 # Embeddable SQL OLAP Database Management System
 brew "duckdb"
 # GNU Emacs text editor
 brew "emacs", restart_service: :changed
 # Modern, maintained replacement for ls
 brew "eza"
-# Play, record, convert, and stream select audio and video codecs
-brew "ffmpeg"
 # Implementation of the Unicode BiDi algorithm
 brew "fribidi"
 # GNU compiler collection
 brew "gcc"
-# GNU Privacy Guard (OpenPGP)
-brew "gnupg"
-# Package compiler and linker metadata toolkit
-brew "pkgconf"
-# Cartographic Projections Library
-brew "proj"
-# LLVM's OpenMP runtime library
-brew "libomp"
-# Geospatial Data Abstraction Library
-brew "gdal"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
@@ -61,14 +42,18 @@ brew "git"
 brew "git-delta"
 # Git extension for versioning large files
 brew "git-lfs"
-# Open-source GitLab command-line tool
-brew "glab"
+# GNU Privacy Guard (OpenPGP)
+brew "gnupg"
 # Backup GMail (or other IMAP) accounts to disk
 brew "imap-backup"
+# Git-compatible distributed version control system
+brew "jj"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# Fast and flexible C++ library for working with OpenStreetMap data
-brew "libosmium"
+# LLVM's OpenMP runtime library
+brew "libomp"
+# Next-gen compiler infrastructure
+brew "llvm"
 # LLVM Project Linker
 brew "lld"
 # Powerful, lightweight programming language
@@ -81,12 +66,16 @@ brew "mergiraf", args: ["HEAD"]
 brew "ocaml"
 # OCaml package manager
 brew "opam"
-# Tool Command Language
-brew "tcl-tk"
-# Software environment for statistical computing
-brew "r"
+# Development kit for the Java programming language
+brew "openjdk"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
+# Cartographic Projections Library
+brew "proj"
 # 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
+# Tool Command Language
+brew "tcl-tk"
 # Official tldr client written in Rust
 brew "tlrc"
 # Extremely fast Python type checker, written in Rust
@@ -99,8 +88,6 @@ brew "udunits"
 brew "uv"
 # Internet file retriever
 brew "wget"
-# Feature-rich command-line audio/video downloader
-brew "yt-dlp"
 # General-purpose lossless data-compression library
 brew "zlib", link: true
 # Fish-like fast/unobtrusive autosuggestions for zsh
@@ -133,29 +120,23 @@ cask "codex-app"
 cask "discord"
 # Launcher for *Epic Games* games
 cask "epic-games"
-# Collaborative team software
-cask "figma"
 # Web browser
 cask "firefox"
 cask "font-fontawesome"
-# Desktop client for GitHub repositories
-cask "github"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
 # Web browser
 cask "google-chrome"
 # Client for the Google Drive storage service
 cask "google-drive"
 # Keyboard customiser
 cask "karabiner-elements"
-# GPU-based terminal emulator
-cask "kitty"
 # Software for Logitech devices
 cask "logi-options+"
 # Support for Logitech G gear
 cask "logitech-g-hub"
 # File system integration
 cask "macfuse"
-# Mounts servers and cloud storages as a disk on the desktop
-cask "mountain-duck"
 # Free and open-source RSS reader
 cask "netnewswire"
 # Knowledge base that works on top of a local folder of plain text Markdown files
@@ -164,6 +145,8 @@ cask "obsidian"
 cask "positron"
 # Scientific and technical publishing system built on Pandoc
 cask "quarto"
+# Environment for statistical computing and graphics
+cask "r-app"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Music streaming service
