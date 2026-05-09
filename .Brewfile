@@ -1,7 +1,5 @@
 tap "borgbackup/tap"
 tap "oven-sh/bun"
-# Fast and opinionated formatter for R code
-brew "air"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
 # Library for command-line editing
@@ -30,8 +28,6 @@ brew "duckdb"
 brew "emacs", restart_service: :changed
 # Modern, maintained replacement for ls
 brew "eza"
-# Implementation of the Unicode BiDi algorithm
-brew "fribidi"
 # GNU compiler collection
 brew "gcc"
 # GitHub command-line tool
@@ -46,18 +42,12 @@ brew "git-lfs"
 brew "gnupg"
 # Backup GMail (or other IMAP) accounts to disk
 brew "imap-backup"
-# Git-compatible distributed version control system
-brew "jj"
-# Lightweight and flexible command-line JSON processor
-brew "jq"
 # LLVM's OpenMP runtime library
 brew "libomp"
 # Next-gen compiler infrastructure
 brew "llvm"
 # LLVM Project Linker
 brew "lld"
-# Powerful, lightweight programming language
-brew "lua"
 # Hash utilities
 brew "md5sha1sum", link: true
 # Syntax-aware git merge driver
@@ -66,28 +56,18 @@ brew "mergiraf", args: ["HEAD"]
 brew "ocaml"
 # OCaml package manager
 brew "opam"
-# Development kit for the Java programming language
-brew "openjdk"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
-# Cartographic Projections Library
-brew "proj"
 # 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
-# Tool Command Language
-brew "tcl-tk"
 # Official tldr client written in Rust
 brew "tlrc"
 # Extremely fast Python type checker, written in Rust
 brew "ty"
-# Markup-based typesetting system
-brew "typst"
 # Unidata unit conversion library
 brew "udunits"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
-# Internet file retriever
-brew "wget"
 # General-purpose lossless data-compression library
 brew "zlib", link: true
 # Fish-like fast/unobtrusive autosuggestions for zsh
