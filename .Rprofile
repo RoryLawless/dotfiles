@@ -4,6 +4,7 @@ if (interactive()) {
   suppressMessages(require(usethis))
   suppressMessages(require(pak))
   suppressMessages(require(conflicted))
+  suppressMessages(require(datapasta))
 
   options(
     warnPartialMatchArgs = TRUE,

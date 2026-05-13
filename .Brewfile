@@ -14,22 +14,18 @@ brew "libgit2"
 brew "bat"
 # Simple wrapper script for the Borg backup software
 brew "borgmatic"
-# GNU internationalization (i18n) and localization (l10n) library
-brew "gettext"
-# Vector graphics library with cross-device output support
-brew "cairo"
 # CLI tool for Cloudflare Workers
 brew "cloudflare-wrangler"
 # Cross-platform make
 brew "cmake"
 # Embeddable SQL OLAP Database Management System
 brew "duckdb"
+# GNU internationalization (i18n) and localization (l10n) library
+brew "gettext"
 # GNU Emacs text editor
 brew "emacs", restart_service: :changed
 # Modern, maintained replacement for ls
 brew "eza"
-# GNU compiler collection
-brew "gcc"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
@@ -42,30 +38,20 @@ brew "git-lfs"
 brew "gnupg"
 # Backup GMail (or other IMAP) accounts to disk
 brew "imap-backup"
-# LLVM's OpenMP runtime library
-brew "libomp"
 # Next-gen compiler infrastructure
 brew "llvm"
-# LLVM Project Linker
-brew "lld"
-# Hash utilities
-brew "md5sha1sum", link: true
 # Syntax-aware git merge driver
 brew "mergiraf", args: ["HEAD"]
 # General purpose programming language in the ML family
 brew "ocaml"
 # OCaml package manager
 brew "opam"
-# Package compiler and linker metadata toolkit
-brew "pkgconf"
 # 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
 # Official tldr client written in Rust
 brew "tlrc"
 # Extremely fast Python type checker, written in Rust
 brew "ty"
-# Unidata unit conversion library
-brew "udunits"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
 # General-purpose lossless data-compression library
