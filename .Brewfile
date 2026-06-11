@@ -18,6 +18,8 @@ brew "borgmatic"
 brew "cloudflare-wrangler"
 # Cross-platform make
 brew "cmake"
+# Diff that understands syntax
+brew "difftastic"
 # Embeddable SQL OLAP Database Management System
 brew "duckdb"
 # GNU internationalization (i18n) and localization (l10n) library
@@ -28,12 +30,18 @@ brew "emacs", restart_service: :changed
 brew "eza"
 # GitHub command-line tool
 brew "gh"
+# General-purpose lossless data-compression library
+brew "zlib", link: true
 # Distributed revision control system
 brew "git"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
 # Git extension for versioning large files
 brew "git-lfs"
+# Git LFS plugin that uploads and downloads using the Xet protocol
+brew "git-xet"
+# Open-source GitLab command-line tool
+brew "glab"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Backup GMail (or other IMAP) accounts to disk
@@ -42,6 +50,8 @@ brew "imap-backup"
 brew "llvm"
 # Syntax-aware git merge driver
 brew "mergiraf", args: ["HEAD"]
+# Deep clean and optimize your Mac
+brew "mole"
 # General purpose programming language in the ML family
 brew "ocaml"
 # OCaml package manager
@@ -54,8 +64,6 @@ brew "tlrc"
 brew "ty"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
-# General-purpose lossless data-compression library
-brew "zlib", link: true
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
 # Additional completion definitions for zsh
@@ -70,8 +78,6 @@ brew "oven-sh/bun/bun"
 cask "1password"
 # Command-line interface for 1Password
 cask "1password-cli"
-# Application uninstaller
-cask "appcleaner"
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
 # Anthropic's official Claude AI desktop app
@@ -82,17 +88,19 @@ cask "claude-code@latest"
 cask "codex"
 # OpenAI's Codex desktop app for managing coding agents
 cask "codex-app"
+# Plain-text editor for web pages, program source codes and more
+cask "coteditor"
 # Voice and text chat software
 cask "discord"
 # Launcher for *Epic Games* games
 cask "epic-games"
 # Web browser
 cask "firefox"
+# Web browser
+cask "firefox@developer-edition"
 cask "font-fontawesome"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-# Web browser
-cask "google-chrome"
 # Client for the Google Drive storage service
 cask "google-drive"
 # Keyboard customiser
@@ -104,25 +112,33 @@ cask "logitech-g-hub"
 # File system integration
 cask "macfuse"
 # Free and open-source RSS reader
-cask "netnewswire"
+cask "netnewswire@beta"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Data science IDE
 cask "positron"
+# Geographic Information System
+cask "qgis"
 # Scientific and technical publishing system built on Pandoc
 cask "quarto"
 # Environment for statistical computing and graphics
 cask "r-app"
 # Control your tools with a few keystrokes
 cask "raycast"
+# Dictation and transcription app with AI-powered editing
+cask "spokenly"
 # Music streaming service
 cask "spotify"
+# Multimedia player
+cask "vlc"
 # Native desktop client for WhatsApp
 cask "whatsapp"
 # Full-featured companion app to the YubiKey
 cask "yubico-authenticator"
 # Multiplayer code editor
 cask "zed"
+# Open-source markdown editor
+cask "zettlr"
 # Video communication and virtual meeting platform
 cask "zoom"
 # Collect, organise, cite, and share research sources
