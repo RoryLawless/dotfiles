@@ -53,3 +53,7 @@
 [diff]
     algorithm = histogram
     tool = difftastic
+[lfs "customtransfer.xet"]
+	path = git-xet
+	args = transfer
+	concurrent = true
