@@ -14,7 +14,10 @@ if (interactive()) {
     setWidthOnResize = TRUE,
     repos = c(
       CRAN = "https://packagemanager.posit.co/cran/latest",
-      RMULTI = "https://community.r-multiverse.org"
+      MV = "https://community.r-multiverse.org",
+      STAN = "https://stan-dev.r-universe.dev",
+      MM = "https://milesmcbain.r-universe.dev",
+      DT = "https://rdatatable.r-universe.dev"
     ),
     scipen = 999,
     tigris_use_cache = TRUE
