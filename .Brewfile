@@ -1,17 +1,17 @@
-tap "borgbackup/tap"
-tap "oven-sh/bun"
+tap "anomalyco/tap"
+tap "borgbackup/tap", trusted: true
+tap "libkrun/krun", "https://github.com/libkrun/homebrew-krun.git", trusted: true
+tap "oven-sh/bun", trusted: true
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
-# Library for command-line editing
-brew "readline"
-# General-purpose data compression with high compression ratio
-brew "xz"
-# Official Amazon AWS command-line interface
-brew "awscli"
 # C library of Git core methods that is re-entrant and linkable
 brew "libgit2"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Library for command-line editing
+brew "readline"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Simple wrapper script for the Borg backup software
 brew "borgmatic"
 # CLI tool for Cloudflare Workers
@@ -30,8 +30,6 @@ brew "emacs", restart_service: :changed
 brew "eza"
 # GitHub command-line tool
 brew "gh"
-# General-purpose lossless data-compression library
-brew "zlib", link: true
 # Distributed revision control system
 brew "git"
 # Syntax-highlighting pager for git and diff output
@@ -40,8 +38,6 @@ brew "git-delta"
 brew "git-lfs"
 # Git LFS plugin that uploads and downloads using the Xet protocol
 brew "git-xet"
-# Open-source GitLab command-line tool
-brew "glab"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Backup GMail (or other IMAP) accounts to disk
@@ -56,22 +52,32 @@ brew "mole"
 brew "ocaml"
 # OCaml package manager
 brew "opam"
+# Tool for managing OCI containers and pods
+brew "podman"
 # 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
+# Open agent skills ecosystem
+brew "skills"
 # Official tldr client written in Rust
 brew "tlrc"
 # Extremely fast Python type checker, written in Rust
 brew "ty"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+# General-purpose lossless data-compression library
+brew "zlib", link: true
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
 # Additional completion definitions for zsh
 brew "zsh-completions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
+# The AI coding agent built for the terminal.
+brew "anomalyco/tap/opencode", trusted: true
 # Deduplicating archiver with compression and authenticated encryption
 brew "borgbackup/tap/borgbackup-fuse"
+# CLI tool to start Linux KVM or macOS HVF VMs using the libkrun
+brew "libkrun/krun/krunkit", trusted: true
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
 # Password manager that keeps all passwords secure behind one password
@@ -86,8 +92,6 @@ cask "claude"
 cask "claude-code@latest"
 # OpenAI's coding agent that runs in your terminal
 cask "codex"
-# OpenAI's Codex desktop app for managing coding agents
-cask "codex-app"
 # Plain-text editor for web pages, program source codes and more
 cask "coteditor"
 # Voice and text chat software
@@ -96,9 +100,6 @@ cask "discord"
 cask "epic-games"
 # Web browser
 cask "firefox"
-# Web browser
-cask "firefox@developer-edition"
-cask "font-fontawesome"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Client for the Google Drive storage service
@@ -107,24 +108,20 @@ cask "google-drive"
 cask "karabiner-elements"
 # Software for Logitech devices
 cask "logi-options+"
-# Support for Logitech G gear
-cask "logitech-g-hub"
 # File system integration
 cask "macfuse"
 # Free and open-source RSS reader
 cask "netnewswire@beta"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Browse, manage, inspect containers and images
+cask "podman-desktop"
 # Data science IDE
 cask "positron"
-# Geographic Information System
-cask "qgis"
 # Scientific and technical publishing system built on Pandoc
 cask "quarto"
 # Environment for statistical computing and graphics
 cask "r-app"
-# Control your tools with a few keystrokes
-cask "raycast"
 # Dictation and transcription app with AI-powered editing
 cask "spokenly"
 # Music streaming service
@@ -135,8 +132,6 @@ cask "vlc"
 cask "whatsapp"
 # Full-featured companion app to the YubiKey
 cask "yubico-authenticator"
-# Multiplayer code editor
-cask "zed"
 # Open-source markdown editor
 cask "zettlr"
 # Video communication and virtual meeting platform
