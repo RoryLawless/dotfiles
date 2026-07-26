@@ -17,7 +17,8 @@ if (interactive()) {
       MV = "https://community.r-multiverse.org",
       STAN = "https://stan-dev.r-universe.dev",
       MM = "https://milesmcbain.r-universe.dev",
-      DT = "https://rdatatable.r-universe.dev"
+      DT = "https://rdatatable.r-universe.dev",
+      RL = "https://rorylawless.r-universe.dev"
     ),
     scipen = 999,
     tigris_use_cache = TRUE

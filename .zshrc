@@ -28,7 +28,7 @@ export GIT_PS1_SHOWCOLORHINTS=true
 setopt PROMPT_SUBST
 
 # Environment vars for defaults
-export EDITOR="emacs"
+export EDITOR="cot"
 export VISUAL="$EDITOR"
 export GPG_TTY=$(tty)
 
@@ -36,8 +36,7 @@ export GPG_TTY=$(tty)
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME/'
 alias ls='eza --long --header --icons=never'
 alias python='python3'
-alias rmrf='rm -rf'
-alias updateR='Rscript -e "update.packages(repos = c(CRAN = \"https://packagemanager.posit.co/cran/latest\", MV = \"https://community.r-multiverse.org\", STAN = \"https://stan-dev.r-universe.dev\", MM = \"https://milesmcbain.r-universe.dev\", DT = \"https://rdatatable.r-universe.dev\"), ask = FALSE)"'
+alias updateR='Rscript -e "update.packages(repos = c(CRAN = \"https://packagemanager.posit.co/cran/latest\", MV = \"https://community.r-multiverse.org\", STAN = \"https://stan-dev.r-universe.dev\", MM = \"https://milesmcbain.r-universe.dev\", DT = \"https://rdatatable.r-universe.dev\", RL = \"https://rorylawless.r-universe.dev\"), ask = FALSE)"'
 alias update='brew update && brew upgrade --yes --force --greedy && brew cleanup --prune=3'
 alias positron='open /Applications/Positron.app'
 alias cat='bat'

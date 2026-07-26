@@ -24,7 +24,7 @@
 [feature]
     manyFiles = true
 [core]
-    editor = emacs
+    editor = cot
     pager = delta
     autocrlf = false
     eol = lf
