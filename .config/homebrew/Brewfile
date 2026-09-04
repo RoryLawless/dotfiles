@@ -28,6 +28,8 @@ brew "gettext"
 brew "emacs", restart_service: :changed
 # Modern, maintained replacement for ls
 brew "eza"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
@@ -38,6 +40,8 @@ brew "git-delta"
 brew "git-lfs"
 # Git LFS plugin that uploads and downloads using the Xet protocol
 brew "git-xet"
+# Source code tag system
+brew "global"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Backup GMail (or other IMAP) accounts to disk
@@ -52,18 +56,20 @@ brew "mole"
 brew "ocaml"
 # OCaml package manager
 brew "opam"
+# Package management made easy
+brew "pixi"
 # Tool for managing OCI containers and pods
 brew "podman"
 # 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
 # Open agent skills ecosystem
 brew "skills"
+# Granddaddy of HTML tools, with support for modern standards
+brew "tidy-html5"
 # Official tldr client written in Rust
 brew "tlrc"
 # Extremely fast Python type checker, written in Rust
 brew "ty"
-# Extremely fast Python package installer and resolver, written in Rust
-brew "uv"
 # General-purpose lossless data-compression library
 brew "zlib", link: true
 # Fish-like fast/unobtrusive autosuggestions for zsh
@@ -102,18 +108,20 @@ cask "epic-games"
 cask "firefox"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Desktop client for GitHub repositories
+cask "github"
 # Client for the Google Drive storage service
 cask "google-drive"
 # Keyboard customiser
 cask "karabiner-elements"
-# Software for Logitech devices
-cask "logi-options+"
 # File system integration
 cask "macfuse"
 # Free and open-source RSS reader
 cask "netnewswire@beta"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Local-first alternative to Logitech Options+ for HID++ devices
+cask "openlogi"
 # Browse, manage, inspect containers and images
 cask "podman-desktop"
 # Data science IDE
@@ -122,8 +130,8 @@ cask "positron"
 cask "quarto"
 # Environment for statistical computing and graphics
 cask "r-app"
-# Dictation and transcription app with AI-powered editing
-cask "spokenly"
+# Control your tools with a few keystrokes
+cask "raycast"
 # Music streaming service
 cask "spotify"
 # Multimedia player
