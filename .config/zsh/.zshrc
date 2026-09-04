@@ -69,7 +69,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME/'
 alias ls='eza --long --header --icons=never'
 alias python='python3'
-alias update='brew update && brew upgrade --yes --greedy && brew cleanup --prune=3'
+alias update='brew update && brew upgrade --yes && brew cleanup'
 alias positron='open /Applications/Positron.app'
 alias cat='bat'
 
