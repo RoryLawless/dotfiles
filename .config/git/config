@@ -79,6 +79,7 @@
     colorMoved = default
     mnemonicPrefix = true
     tool = difftastic
+    guitool = meld
 
 [difftool]
     prompt = false
@@ -95,7 +96,11 @@
 
 [merge]
     conflictStyle = zdiff3
-    # No merge.tool: meld is not installed. `git mergetool` will list what is.
+    tool = meld
+
+[mergetool]
+    keepBackup = false
+    prompt = false
 
 [merge "mergiraf"]
     name = mergiraf

@@ -2,6 +2,8 @@ tap "anomalyco/tap"
 tap "borgbackup/tap", trusted: true
 tap "libkrun/krun", "https://github.com/libkrun/homebrew-krun.git", trusted: true
 tap "oven-sh/bun", trusted: true
+# Fast and opinionated formatter for R code
+brew "air"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
 # C library of Git core methods that is re-entrant and linkable
@@ -46,6 +48,8 @@ brew "global"
 brew "gnupg"
 # Backup GMail (or other IMAP) accounts to disk
 brew "imap-backup"
+# Just another R linter
+brew "jarl"
 # Next-gen compiler infrastructure
 brew "llvm"
 # Syntax-aware git merge driver
@@ -116,6 +120,8 @@ cask "google-drive"
 cask "karabiner-elements"
 # File system integration
 cask "macfuse"
+# Visual diff and merge tool
+cask "meld"
 # Free and open-source RSS reader
 cask "netnewswire@beta"
 # Knowledge base that works on top of a local folder of plain text Markdown files
