@@ -1,6 +1,6 @@
 # ~/.Rprofile
 
-# Applies to every session, including Rscript and background installs
+# Applies when this is the selected user profile; a project .Rprofile takes precedence
 options(
   repos = c(
     CRAN = "https://packagemanager.posit.co/cran/latest",
@@ -8,7 +8,7 @@ options(
     MM   = "https://milesmcbain.r-universe.dev"
   ),
   tigris_use_cache = TRUE,
-  Ncpus = max(1L, parallel::detectCores() - 1L)
+  Ncpus = max(1L, parallel::detectCores() - 1L, na.rm = TRUE)
 )
 
 if (interactive()) {

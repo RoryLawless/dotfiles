@@ -1,6 +1,19 @@
 # ~/.config/zsh/.zprofile
 
-eval "$(brew shellenv zsh)"
+# Homebrew is normally added by macOS path_helper; standard prefixes also cover
+# minimal login environments. Only evaluate shellenv when it succeeds.
+brew_command=""
+if (( $+commands[brew] )); then
+  brew_command=${commands[brew]}
+elif [[ -x /opt/homebrew/bin/brew ]]; then
+  brew_command=/opt/homebrew/bin/brew
+elif [[ -x /usr/local/bin/brew ]]; then
+  brew_command=/usr/local/bin/brew
+fi
+if [[ -n $brew_command ]]; then
+  brew_shellenv="$("$brew_command" shellenv zsh)" && eval "$brew_shellenv"
+fi
+unset brew_command brew_shellenv
 export HOMEBREW_BUNDLE_FILE="$XDG_CONFIG_HOME/homebrew/Brewfile"
 
 # PATH: keep unique, user tool dirs ahead of system paths

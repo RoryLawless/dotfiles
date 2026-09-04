@@ -1,5 +1,31 @@
 # ~/.config/zsh/.zshrc
 
+# Interactive non-login shells normally inherit Homebrew from their parent.
+# Also initialize it in a minimal environment, without changing login-shell PATH.
+if [[ -z $HOMEBREW_PREFIX ]]; then
+  brew_command=""
+  if (( $+commands[brew] )); then
+    brew_command=${commands[brew]}
+  elif [[ -x /opt/homebrew/bin/brew ]]; then
+    brew_command=/opt/homebrew/bin/brew
+  elif [[ -x /usr/local/bin/brew ]]; then
+    brew_command=/usr/local/bin/brew
+  fi
+  if [[ -n $brew_command ]]; then
+    brew_shellenv="$("$brew_command" shellenv zsh)" && eval "$brew_shellenv"
+  fi
+  unset brew_command brew_shellenv
+
+  # Match the login profile's user-tool precedence when no login profile ran.
+  typeset -U path
+  path=(
+    "$HOME/.pixi/bin"
+    "$HOME/.cargo/bin"
+    "$HOME/.local/bin"
+    $path
+  )
+fi
+
 # History
 HISTFILE="$XDG_STATE_HOME/zsh/history"
 [[ -d ${HISTFILE:h} ]] || mkdir -p "${HISTFILE:h}"
@@ -62,7 +88,7 @@ unset git_prompt
 export EDITOR="cot -w"
 [[ -n $SSH_CONNECTION ]] && export EDITOR="emacs -nw"   # no GUI over SSH
 export VISUAL="$EDITOR"
-export GPG_TTY=$(tty)
+GPG_TTY=$(tty 2>/dev/null) && export GPG_TTY
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Aliases
@@ -79,19 +105,29 @@ alias cat='bat'
 # fzf: Ctrl-R history, Ctrl-T files, Alt-C cd
 export FZF_DEFAULT_OPTS='--height 40% --layout reverse --border'
 export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-range=:200 {}'"
-source <(fzf --zsh)
+if (( $+commands[fzf] )); then
+  fzf_setup="$(fzf --zsh 2>/dev/null)" && eval "$fzf_setup"
+  unset fzf_setup
+fi
 
 # Autosuggestions
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+[[ -r "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && \
+  source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # Mole completion, cached and regenerated when the binary changes
 if (( $+commands[mole] )); then
   mole_comp="$XDG_CACHE_HOME/zsh/mole-completion.zsh"
   if [[ ! -s $mole_comp || ${commands[mole]:A} -nt $mole_comp ]]; then
-    mole completion zsh > "$mole_comp" 2>/dev/null
+    mole_comp_tmp="${mole_comp}.tmp.$$"
+    if mole completion zsh >| "$mole_comp_tmp" 2>/dev/null; then
+      command mv -f "$mole_comp_tmp" "$mole_comp"
+    else
+      command rm -f "$mole_comp_tmp"
+    fi
+    unset mole_comp_tmp
   fi
-  source "$mole_comp"
+  [[ -s $mole_comp ]] && source "$mole_comp"
   unset mole_comp
 fi
 
@@ -100,4 +136,5 @@ fi
 
 # Syntax highlighting: must be sourced last
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
-source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+[[ -r "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] && \
+  source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"

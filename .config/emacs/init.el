@@ -39,5 +39,9 @@
 (add-hook 'caml-mode-hook 'set-ocaml-error-regexp)
 
 ;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line
-(require 'opam-user-setup (expand-file-name "opam-user-setup.el" user-emacs-directory))
+;; Optional: generate opam-user-setup.el with `opam user-setup install`.
+(let ((opam-user-setup-file
+       (expand-file-name "opam-user-setup.el" user-emacs-directory)))
+  (when (file-exists-p opam-user-setup-file)
+    (require 'opam-user-setup opam-user-setup-file)))
 ;; ## end of OPAM user-setup addition for emacs / base ## keep this line
