@@ -1,0 +1,5 @@
+# ~/.config/air/air.toml
+# User-level defaults; a project's own air.toml overrides this file.
+
+[format]
+line-ending = "lf"

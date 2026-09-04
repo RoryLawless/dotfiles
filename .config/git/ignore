@@ -1,0 +1,11 @@
+**/.claude/settings.local.json
+.Rproj.user
+.Rhistory
+.RData
+.httr-oauth
+.DS_Store
+.quarto
+.vscode
+tmp
+.positron
+*~

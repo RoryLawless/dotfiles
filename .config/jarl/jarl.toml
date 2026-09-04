@@ -1,0 +1,9 @@
+# ~/.config/jarl/jarl.toml
+# User-level defaults; a project's own jarl.toml overrides this file.
+# fixable defaults to everything selected and default-exclude defaults to true.
+
+[lint]
+select = ["DPLYR", "CORR", "SUSP", "PERF", "READ", "TESTTHAT"]
+
+[lint.assignment]
+operator = "<-"

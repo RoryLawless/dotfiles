@@ -1,0 +1,121 @@
+# ~/.config/git/config
+# Identity and signing key live in config.local (untracked), next to this file.
+
+[include]
+    path = config.local
+
+[init]
+    defaultBranch = main
+
+[core]
+    pager = delta
+    autocrlf = false
+    eol = lf
+    # No editor set here: git falls back to $EDITOR (cot -w, or emacs -nw over SSH).
+    # attributesFile and excludesFile default to ~/.config/git/attributes and ~/.config/git/ignore.
+
+[feature]
+    manyFiles = true
+
+[color]
+    ui = auto
+
+[column]
+    ui = auto
+
+[branch]
+    sort = -committerdate
+
+[tag]
+    sort = version:refname
+    gpgsign = true
+
+[log]
+    date = iso
+
+[commit]
+    gpgsign = true
+    verbose = true
+
+[gpg]
+    format = ssh
+
+[gpg "ssh"]
+    allowedSignersFile = ~/.config/git/allowed_signers
+
+[transfer]
+    fsckobjects = true
+
+[fetch]
+    fsckobjects = true
+    prune = true
+    prunetags = true
+
+[receive]
+    fsckObjects = true
+
+[pull]
+    ff = only
+
+[push]
+    default = current
+    autoSetupRemote = true
+    followTags = true
+
+[rebase]
+    autoStash = true
+    autoSquash = true
+    updateRefs = true
+
+[rerere]
+    enabled = true
+    autoupdate = true
+
+[help]
+    autocorrect = prompt
+
+[diff]
+    algorithm = histogram
+    colorMoved = default
+    mnemonicPrefix = true
+    tool = difftastic
+
+[difftool]
+    prompt = false
+
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+    difftool = true
+
+[alias]
+    dft = difftool
+    dlog = -c diff.external=difft log -p --ext-diff
+
+[merge]
+    conflictStyle = zdiff3
+    # No merge.tool: meld is not installed. `git mergetool` will list what is.
+
+[merge "mergiraf"]
+    name = mergiraf
+    driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P -l %L
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    line-numbers = true
+    hyperlinks = true
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[lfs "customtransfer.xet"]
+    path = git-xet
+    args = transfer
+    concurrent = true
