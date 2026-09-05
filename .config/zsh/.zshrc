@@ -34,7 +34,8 @@ if [[ -n $HOMEBREW_PREFIX ]]; then
   )
 fi
 
-zstyle ':completion:*' menu select
+zstyle ':completion:*' menu no                 # fzf-tab draws the menu instead
+zstyle ':completion:*:descriptions' format '[%d]'   # group headings in fzf-tab
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/compcache"
@@ -93,6 +94,15 @@ eval "$(zoxide init zsh)"
 export FZF_DEFAULT_OPTS='--height 40% --layout reverse --border'
 export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-range=:200 {}'"
 (( $+commands[fzf] )) && source <(fzf --zsh)
+
+# fzf-tab: Tab completion through fzf. Loads after compinit and before the
+# plugins that wrap widgets (autosuggestions, syntax highlighting).
+if [[ -r "$HOMEBREW_PREFIX/share/fzf-tab/fzf-tab.zsh" ]]; then
+  source "$HOMEBREW_PREFIX/share/fzf-tab/fzf-tab.zsh"
+  zstyle ':fzf-tab:*' use-fzf-default-opts yes
+  zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+  zstyle ':completion:*:git-checkout:*' sort false
+fi
 
 # Autosuggestions
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)

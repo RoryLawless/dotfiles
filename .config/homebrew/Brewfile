@@ -32,6 +32,8 @@ brew "emacs", restart_service: :changed
 brew "eza"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Replace zsh completion selection menu with fzf
+brew "fzf-tab"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
