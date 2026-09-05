@@ -44,6 +44,8 @@ brew "git-lfs"
 brew "git-xet"
 # Source code tag system
 brew "global"
+# Render markdown on the CLI
+brew "glow"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Backup GMail (or other IMAP) accounts to disk
