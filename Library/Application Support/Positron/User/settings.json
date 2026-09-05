@@ -110,7 +110,8 @@
     "workbench.preferredLightColorTheme": "Light 2026",
     "workbench.settings.alwaysShowAdvancedSettings": true,
     "python.pixiToolPath": "/opt/homebrew/bin/pixi",
-    "window.nativeTabs": true,
     "python.installModulesInTerminal": true,
-    "githubPullRequests.createOnPublishBranch": "never"
+    "githubPullRequests.createOnPublishBranch": "never",
+    "quarto.embeddedLanguageFeatures.native": true,
+    "workbench.experimental.modernUI": true
 }
