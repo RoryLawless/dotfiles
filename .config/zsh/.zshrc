@@ -15,6 +15,9 @@ setopt SHARE_HISTORY EXTENDED_HISTORY
 cdpath=("$HOME/repos")
 setopt AUTO_CD
 
+# Offer to fix a mistyped command name
+setopt CORRECT
+
 # Line editor: emacs keymap, up/down search history by typed prefix
 bindkey -e
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
@@ -34,6 +37,9 @@ if [[ -n $HOMEBREW_PREFIX ]]; then
   )
 fi
 
+# File colors for completion lists, fzf-tab and eza
+export LS_COLORS='di=1;34:ln=1;36:so=1;35:pi=33:ex=1;32:bd=1;33:cd=1;33:or=31:mi=31'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no                 # fzf-tab draws the menu instead
 zstyle ':completion:*:descriptions' format '[%d]'   # group headings in fzf-tab
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*'
@@ -71,6 +77,10 @@ export EDITOR="cot -w"
 export VISUAL="$EDITOR"
 export GPG_TTY=$(tty)
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# Alt-H (the built-in run-help widget) shows the tldr page for the command on the line
+unalias run-help 2>/dev/null
+run-help() { tldr "$@" }
 
 # Aliases
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME/'
