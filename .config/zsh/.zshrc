@@ -1,30 +1,7 @@
 # ~/.config/zsh/.zshrc
 
-# Interactive non-login shells normally inherit Homebrew from their parent.
-# Also initialize it in a minimal environment, without changing login-shell PATH.
-if [[ -z $HOMEBREW_PREFIX ]]; then
-  brew_command=""
-  if (( $+commands[brew] )); then
-    brew_command=${commands[brew]}
-  elif [[ -x /opt/homebrew/bin/brew ]]; then
-    brew_command=/opt/homebrew/bin/brew
-  elif [[ -x /usr/local/bin/brew ]]; then
-    brew_command=/usr/local/bin/brew
-  fi
-  if [[ -n $brew_command ]]; then
-    brew_shellenv="$("$brew_command" shellenv zsh)" && eval "$brew_shellenv"
-  fi
-  unset brew_command brew_shellenv
-
-  # Match the login profile's user-tool precedence when no login profile ran.
-  typeset -U path
-  path=(
-    "$HOME/.pixi/bin"
-    "$HOME/.cargo/bin"
-    "$HOME/.local/bin"
-    $path
-  )
-fi
+# A non-login shell normally inherits the login environment; build it if not
+[[ -n $HOMEBREW_PREFIX ]] || source "$ZDOTDIR/.zprofile"
 
 # History
 HISTFILE="$XDG_STATE_HOME/zsh/history"
@@ -55,7 +32,6 @@ fi
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/compcache"
 
@@ -88,7 +64,7 @@ unset git_prompt
 export EDITOR="cot -w"
 [[ -n $SSH_CONNECTION ]] && export EDITOR="emacs -nw"   # no GUI over SSH
 export VISUAL="$EDITOR"
-GPG_TTY=$(tty 2>/dev/null) && export GPG_TTY
+export GPG_TTY=$(tty)
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Aliases
@@ -105,10 +81,7 @@ alias cat='bat'
 # fzf: Ctrl-R history, Ctrl-T files, Alt-C cd
 export FZF_DEFAULT_OPTS='--height 40% --layout reverse --border'
 export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-range=:200 {}'"
-if (( $+commands[fzf] )); then
-  fzf_setup="$(fzf --zsh 2>/dev/null)" && eval "$fzf_setup"
-  unset fzf_setup
-fi
+(( $+commands[fzf] )) && source <(fzf --zsh)
 
 # Autosuggestions
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
@@ -119,15 +92,9 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 if (( $+commands[mole] )); then
   mole_comp="$XDG_CACHE_HOME/zsh/mole-completion.zsh"
   if [[ ! -s $mole_comp || ${commands[mole]:A} -nt $mole_comp ]]; then
-    mole_comp_tmp="${mole_comp}.tmp.$$"
-    if mole completion zsh >| "$mole_comp_tmp" 2>/dev/null; then
-      command mv -f "$mole_comp_tmp" "$mole_comp"
-    else
-      command rm -f "$mole_comp_tmp"
-    fi
-    unset mole_comp_tmp
+    mole completion zsh > "$mole_comp" 2>/dev/null
   fi
-  [[ -s $mole_comp ]] && source "$mole_comp"
+  source "$mole_comp"
   unset mole_comp
 fi
 

@@ -1,22 +1,11 @@
-# Include roots
+# Include root
 R /Users/rory
 
-# Exclusions
-! re:^(Users/rory/Library/(?!Messages|Preferences|LaunchAgents|Fonts).*)
+# Exclusions. Nothing else is needed: a file that matches no pattern is included.
+! re:^Users/rory/Library/(?!Messages|Preferences|LaunchAgents|Fonts)
+! re:^Users/rory/(Music|Movies|mnt|Public|Applications|repos|Downloads|\.Trash|tmp)
 - **/.DS_Store
 - **/*.log
 - **/*.cache
 - **/*.out
 - **/.cache
-! re:^(Users/rory/(Music|Movies|mnt|Public|Applications|repos|Downloads|.Trash|tmp).*)
-
-# Include specific directories
-+ Users/rory
-+ Users/rory/Library/Preferences
-+ Users/rory/Library/LaunchAgents
-+ Users/rory/Library/Fonts
-+ Users/rory/Library/Messages
-
-
-# General exclude
-- **

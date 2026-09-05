@@ -1,110 +1,60 @@
-# Daily backup (borgmatic)
+# Daily backup
 
-## Files and restoration
+borgmatic backs up the home directory every day at 19:00, run by the
+LaunchAgent `com.borg.backup`.
 
-| File | Handling |
-| --- | --- |
-| `~/.daily-backup/borgmatic.yaml` | Private runtime configuration; restore separately, keep out of Git, mode `0600`. |
-| `~/.daily-backup/borg-exclude` | Tracked include/exclude patterns; restored by the dotfiles checkout. |
-| `~/.daily-backup/README.md` | Tracked documentation; restored by the dotfiles checkout. |
-| `~/Library/LaunchAgents/com.borg.backup.plist` | Machine-local scheduled job; restore separately and inspect before loading. |
-| `~/.config/borgmatic/config.yaml` | Optional conventional-path symlink to the private YAML; keep out of Git. The job uses the YAML's explicit path. |
+## Files
 
-Restore the YAML through a private channel, without displaying its contents in
-chat or terminal logs. Restrict its permissions and inspect any ACLs:
+`~/.daily-backup/borgmatic.yaml` is the borgmatic configuration. It names the
+repository and the passphrase command, so it is untracked and mode 600.
+`~/.config/borgmatic/config.yaml` is a symlink to it, created by the install
+script, so borgmatic needs no `-c`.
+`~/.daily-backup/borg-exclude` holds the include and exclude patterns and is
+tracked. `~/Library/LaunchAgents/com.borg.backup.plist` is the schedule and is
+tracked too. Output goes to `~/Library/Logs/borg/borg-backup-out.log` and
+`borg-backup-err.log`.
 
-```zsh
-chmod 600 "$HOME/.daily-backup/borgmatic.yaml"
-ls -le "$HOME/.daily-backup/borgmatic.yaml"
-```
+## Schedule
 
-The owner-only mode must not be undermined by an ACL granting other users
-access. Restore the Keychain item referenced by `encryption_passcommand`, SSH
-access to the configured backup repository, and any monitoring credentials.
-Keep `BORG_PASSPHRASE` unset so the configured passphrase command is used.
-Replacement of an exposed notification credential must happen in the private
-account workflow, followed by updating any consumers; do not paste replacements
-into a support conversation.
+The LaunchAgent runs this at 19:00 with `/opt/homebrew/bin` on PATH:
 
-The current LaunchAgent writes to these paths, whose parent must exist:
+    /opt/homebrew/bin/borgmatic --config /Users/rory/.daily-backup/borgmatic.yaml create prune compact
 
-- `~/Library/Logs/borg/borg-backup-out.log`
-- `~/Library/Logs/borg/borg-backup-err.log`
+`prune` applies the retention policy and `compact` reclaims space. Check the
+registration and the last exit status with:
 
-Review protected-folder access for the actual scheduled process. A successful
-interactive terminal test does not establish that launchd has the same Keychain,
-SSH, or macOS privacy access.
+    launchctl print gui/$(id -u)/com.borg.backup
 
-## Schedule and registration
+## Commands
 
-The job is named `com.borg.backup`, runs daily at 19:00, and executes:
+Validate the configuration:
 
-```zsh
-/opt/homebrew/bin/borgmatic --config /Users/rory/.daily-backup/borgmatic.yaml create prune compact
-```
+    borgmatic config validate
 
-This includes retention changes: `prune` removes archives according to the
-configured policy and `compact` reclaims repository space. Do not start the job
-as a harmless connectivity test. Its paths are machine-specific; inspect them
-when restoring on another Mac.
+Check the patterns against a synthetic local archive. This touches nothing
+live:
 
-Restoring the plist alone does not register it. Inspect its arguments, schedule,
-environment, and any `RunAtLoad` setting, then register it only when ready for
-the configured job to run:
+    zsh ~/.config/dotfiles/tests/test-backup.zsh
 
-```zsh
-launchctl bootstrap "gui/$(id -u)" "$HOME/Library/LaunchAgents/com.borg.backup.plist"
-```
+Run a backup now:
 
-Check registration and the most recent recorded result without starting a run:
+    borgmatic create prune compact
 
-```zsh
-launchctl print "gui/$(id -u)/com.borg.backup"
-```
+List archives, list files in the latest one, and restore a path from it:
 
-## Validation and diagnostics
+    borgmatic repo-list
+    borgmatic list --archive latest --path Users/rory/Documents
+    borgmatic extract --archive latest --path Users/rory/Documents --destination ~/tmp/restore
 
-Validate syntax and schema without displaying configuration values:
+Keep `BORG_PASSPHRASE` unset so the passphrase command in the configuration is
+used.
 
-```zsh
-env -u BORG_PASSPHRASE borgmatic -c "$HOME/.daily-backup/borgmatic.yaml" config validate
-```
+## New machine
 
-Do not use `--show` in shared diagnostics; the configuration contains secrets.
-The standalone validation action in the installed borgmatic does not run backup
-actions or monitoring hooks. Review command behavior again after major upgrades.
+Install borgmatic from the Brewfile, restore `borgmatic.yaml` with mode 600,
+and register the plist, which the dotfiles checkout puts in place:
 
-Test the tracked patterns without loading the private configuration or touching
-the server:
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.borg.backup.plist
 
-```zsh
-zsh "$HOME/.config/dotfiles/tests/test-backup.zsh"
-```
-
-Before other borgmatic diagnostics, inspect configured command and monitoring
-hooks privately. A command called a “dry run” is not proof that every hook or
-notification is inert. Use isolated local fixtures with inert hooks for tests.
-
-When a live backup has been explicitly authorized, a create-only diagnostic is:
-
-```zsh
-env -u BORG_PASSPHRASE borgmatic -c "$HOME/.daily-backup/borgmatic.yaml" create
-```
-
-This writes a real archive and may deliver notifications, but does not run the
-job's prune/compact actions. It does not prove the complete scheduled job works.
-Changing transport, retries, or scheduling should follow a reproduced failure,
-not a historical connection-reset message alone.
-
-## Evidence of success
-
-Record the job's completion and exit status separately from underlying Borg
-codes; they are not interchangeable. Inspect warnings for omitted files and
-document any accepted exceptions instead of suppressing them. An archive can
-exist even if another action failed later.
-
-For an authorized full-job verification, record the archive time/name and
-representative members from after deployment, including `.Rprofile` and
-`.config/zsh/.zshrc`. A listing from an archive created before the Zsh relocation
-cannot verify that new path. A clean local job result is useful evidence, but
-does not replace checking archive contents and, when appropriate, a restore.
+The Keychain item that the passphrase command reads and SSH access to the
+backup host must also exist.

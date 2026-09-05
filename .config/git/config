@@ -9,8 +9,6 @@
 
 [core]
     pager = delta
-    autocrlf = false
-    eol = lf
     # No editor set here: git falls back to $EDITOR (cot -w, or emacs -nw over SSH).
     # attributesFile and excludesFile default to ~/.config/git/attributes and ~/.config/git/ignore.
 

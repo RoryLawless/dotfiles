@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.borg.backup</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/opt/homebrew/bin/borgmatic</string>
+        <string>--config</string>
+        <string>/Users/rory/.daily-backup/borgmatic.yaml</string>
+        <string>create</string>
+        <string>prune</string>
+        <string>compact</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/rory/.daily-backup</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/rory/Library/Logs/borg/borg-backup-err.log</string>
+    <key>StandardOutPath</key>
+    <string>/Users/rory/Library/Logs/borg/borg-backup-out.log</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    </dict>
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>19</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+</dict>
+</plist>
