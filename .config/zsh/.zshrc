@@ -11,6 +11,10 @@ SAVEHIST=100000
 setopt HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE HIST_REDUCE_BLANKS
 setopt SHARE_HISTORY EXTENDED_HISTORY
 
+# Directories: cd into a ~/repos project from anywhere, with or without cd
+cdpath=("$HOME/repos")
+setopt AUTO_CD
+
 # Line editor: emacs keymap, up/down search history by typed prefix
 bindkey -e
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
@@ -74,6 +78,10 @@ alias python='python3'
 alias update='brew update && brew upgrade --yes && brew cleanup'
 alias positron='open /Applications/Positron.app'
 alias cat='bat'
+
+# Typing a data file's name prints its first rows
+peek() { duckdb -c "SELECT * FROM '$1' LIMIT 20" }
+alias -s {csv,parquet,json}=peek
 
 # opam
 [[ ! -r "$HOME/.opam/opam-init/init.zsh" ]] || source "$HOME/.opam/opam-init/init.zsh" > /dev/null 2>&1
