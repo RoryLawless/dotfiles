@@ -86,6 +86,9 @@ alias -s {csv,parquet,json}=peek
 # opam
 [[ ! -r "$HOME/.opam/opam-init/init.zsh" ]] || source "$HOME/.opam/opam-init/init.zsh" > /dev/null 2>&1
 
+# zoxide: z jumps to a directory you have visited, zi picks one with fzf
+eval "$(zoxide init zsh)"
+
 # fzf: Ctrl-R history, Ctrl-T files, Alt-C cd
 export FZF_DEFAULT_OPTS='--height 40% --layout reverse --border'
 export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-range=:200 {}'"

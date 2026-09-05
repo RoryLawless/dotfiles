@@ -76,6 +76,8 @@ brew "tlrc"
 brew "ty"
 # General-purpose lossless data-compression library
 brew "zlib", link: true
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
 # Additional completion definitions for zsh
