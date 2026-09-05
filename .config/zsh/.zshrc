@@ -89,6 +89,7 @@ alias python='python3'
 alias update='brew update && brew upgrade --yes && brew cleanup'
 alias positron='open /Applications/Positron.app'
 alias cat='bat'
+alias rupdate='Rscript -e "pak::pak(old.packages()[,\"Package\"])"'
 
 # Typing a data file's name prints its first rows
 peek() { duckdb -c "SELECT * FROM '$1' LIMIT 20" }
