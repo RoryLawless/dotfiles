@@ -63,3 +63,39 @@ Then finish by hand:
     zsh -n ~/.zshenv ~/.config/zsh/.zprofile ~/.config/zsh/.zshrc
     emacs --batch -l ~/.config/emacs/init.el
     zsh ~/.config/dotfiles/tests/test-backup.zsh
+## Windows (work machine)
+
+Only a subset of the repo is useful on Windows. The hooks copy files that
+Windows programs read from `%APPDATA%`; everything else is read in place.
+
+Setup, in Git Bash:
+
+```sh
+git clone --bare -c core.autocrlf=false git@github.com:RoryLawless/dotfiles.git "$HOME/.cfg"
+config() { git --git-dir="$HOME/.cfg" --work-tree="$HOME" "$@"; }
+config config status.showUntrackedFiles no
+config config core.autocrlf false
+config config core.hooksPath "$HOME/.config/dotfiles/hooks"
+config config core.sparseCheckout true
+printf '%s\n' .Rprofile .config/git/ .config/air/ .config/jarl/ .config/dotfiles/ \
+  'Library/Application Support/Positron/User/settings.json' > "$HOME/.cfg/info/sparse-checkout"
+config checkout        # post-checkout runs windows-sync.sh
+```
+
+Then, once, in an ordinary command prompt so R and Emacs resolve `~` to the
+profile folder rather than Documents or AppData:
+
+```
+setx HOME %USERPROFILE%
+```
+
+Create `~/.config/git/config.local` with `user.*` and, if signing there,
+`gpg.ssh.program = C:/Users/<you>/AppData/Local/1Password/app/8/op-ssh-sign.exe`.
+The tracked config names delta, difftastic and meld; install them
+(`winget install dandavison.delta Wilfred.difftastic Meld.Meld`) or override
+in `config.local`, e.g. `[core] pager = less`.
+
+After that, `config pull` updates the checkout and the hook copies changed
+files to `%APPDATA%`. Edit the copies in the repo, not in `%APPDATA%`: the
+hook refuses to overwrite a destination that is newer than the repo copy and
+tells you so.
