@@ -72,6 +72,8 @@ brew "podman"
 brew "sevenzip"
 # Open agent skills ecosystem
 brew "skills"
+# Easiest, most secure way to use WireGuard and 2FA
+brew "tailscale"
 # Granddaddy of HTML tools, with support for modern standards
 brew "tidy-html5"
 # Official tldr client written in Rust
@@ -96,10 +98,8 @@ brew "borgbackup/tap/borgbackup-fuse"
 brew "libkrun/krun/krunkit", trusted: true
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
-# Password manager that keeps all passwords secure behind one password
-cask "1password"
-# Command-line interface for 1Password
-cask "1password-cli"
+# Desktop password and login vault
+cask "bitwarden"
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
 # Anthropic's official Claude AI desktop app
@@ -146,6 +146,8 @@ cask "r-app"
 cask "raycast"
 # Music streaming service
 cask "spotify"
+# Mesh VPN based on WireGuard
+cask "tailscale-app"
 # Multimedia player
 cask "vlc"
 # Native desktop client for WhatsApp

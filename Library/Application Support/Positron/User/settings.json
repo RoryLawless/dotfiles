@@ -12,6 +12,10 @@
         "editor.indentSize": "tabSize",
         "editor.tabSize": 2
     },
+    "chat.agentsControl.enabled": "hidden",
+    "chat.disableAIFeatures": false,
+    "chat.titleBar.openInAgentsWindow.enabled": false,
+    "chat.unifiedAgentsBar.enabled": true,
     "console.showNotebookConsoleActions": true,
     "console.showNotebookConsoles": true,
     "dataExplorer.enablePreview": true,
@@ -64,6 +68,7 @@
     "git.confirmSync": false,
     "git.enableCommitSigning": true,
     "git.enableSmartCommit": true,
+    "githubPullRequests.createOnPublishBranch": "never",
     "notebook.diff.ignoreMetadata": true,
     "notebook.diff.ignoreOutputs": true,
     "notebook.formatOnCellExecution": true,
@@ -81,11 +86,14 @@
     "positron.r.defaultRepositories": "posit-ppm",
     "positron.r.interpreters.pixiDiscovery": true,
     "positron.r.workspaceSymbols.includeCommentSections": true,
+    "python.installModulesInTerminal": true,
     "python.interpreters.exclude": [
         "/usr/bin/python3",
         "/opt/homebrew/bin/python3"
     ],
+    "python.pixiToolPath": "/opt/homebrew/bin/pixi",
     "python.terminal.shellIntegration.enabled": true,
+    "quarto.embeddedLanguageFeatures.native": true,
     "quarto.inlineOutput.enabled": true,
     "rewrap.autoWrap.enabled": true,
     "rewrap.reformat": true,
@@ -105,13 +113,9 @@
     "workbench.colorTheme": "Dark 2026",
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.pinnedTabsOnSeparateRow": true,
+    "workbench.experimental.modernUI": true,
     "workbench.keybindings.rstudioKeybindings": true,
     "workbench.preferredDarkColorTheme": "Dark 2026",
     "workbench.preferredLightColorTheme": "Light 2026",
-    "workbench.settings.alwaysShowAdvancedSettings": true,
-    "python.pixiToolPath": "/opt/homebrew/bin/pixi",
-    "python.installModulesInTerminal": true,
-    "githubPullRequests.createOnPublishBranch": "never",
-    "quarto.embeddedLanguageFeatures.native": true,
-    "workbench.experimental.modernUI": true
+    "workbench.settings.alwaysShowAdvancedSettings": true
 }

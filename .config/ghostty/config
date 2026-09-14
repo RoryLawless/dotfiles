@@ -4,11 +4,13 @@
 
 theme = light:Ayu Light,dark:Ayu Mirage
 macos-auto-secure-input=true
-keybind = shift+enter=text:\x1b\r
-shell-integration = detect
-shell-integration-features = true
-minimum-contrast = 1.1
-background-opacity = 0.85
-background-blur = true
-auto-update = off
-macos-option-as-alt = true
+macos-secure-input-indication=true
+keybind=shift+enter=text:\x1b\r
+shell-integration=detect
+shell-integration-features=no-cursor, sudo, title, path, ssh-env, no-ssh-terminfo
+minimum-contrast=1.1
+background-opacity=0.85
+background-blur=true
+auto-update=off
+macos-option-as-alt=true
+cursor-style=block
