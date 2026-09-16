@@ -1,0 +1,64 @@
+#!/usr/bin/env Rapp
+#| name: rupdate
+#| description: Check for R package updates and install them using pak.
+
+#| description: List available updates without installing them.
+#| short: n
+dry_run <- FALSE
+
+main <- function(dry_run, check = utils::old.packages,
+                 install = pak::pkg_install) {
+  message("Checking for R package updates...")
+  # A failed repository lookup can otherwise look like an up-to-date library.
+  old <- withCallingHandlers(
+    check(),
+    warning = function(w) {
+      stop("Could not reliably check for updates: ", conditionMessage(w),
+           call. = FALSE)
+    }
+  )
+
+  if (is.null(old) || nrow(old) == 0L) {
+    message("All packages are up to date.")
+    return(invisible(NULL))
+  }
+
+  updates <- data.frame(
+    Package = old[, "Package"],
+    Installed = old[, "Installed"],
+    Available = old[, "ReposVer"],
+    Library = old[, "LibPath"],
+    row.names = NULL
+  )
+  print(updates, row.names = FALSE)
+  if (dry_run) {
+    message("Dry run: no packages were installed.")
+    return(invisible(NULL))
+  }
+
+  # Update each copy in its existing library rather than the default library.
+  for (lib in unique(updates$Library)) {
+    packages <- unique(updates$Package[updates$Library == lib])
+    withCallingHandlers(
+      install(packages, lib = lib, upgrade = TRUE),
+      warning = function(w) {
+        stop("Installation reported a warning: ", conditionMessage(w),
+             call. = FALSE)
+      }
+    )
+  }
+  message("Package updates completed.")
+  invisible(NULL)
+}
+
+tryCatch(
+  main(dry_run),
+  error = function(e) {
+    message("rupdate: ", conditionMessage(e))
+    quit(save = "no", status = 1L, runLast = FALSE)
+  },
+  interrupt = function(e) {
+    message("rupdate: interrupted.")
+    quit(save = "no", status = 130L, runLast = FALSE)
+  }
+)
