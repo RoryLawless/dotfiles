@@ -58,6 +58,27 @@ Then finish by hand:
 5. Register the backup LaunchAgent as described in `~/.daily-backup/README.md`.
 6. Open a new terminal.
 
+### R package updater
+
+`~/.local/bin/rupdate` checks for R package updates and installs them with pak.
+On each new machine, install its dependencies and generate the Rapp launcher
+by running this in R:
+
+```r
+install.packages(c("Rapp", "pak"))
+Rapp::install_pkg_cli_apps("Rapp")
+```
+
+The launcher is installed in `~/.local/bin`, which the zsh configuration
+already adds to `PATH`. Track the `rupdate` script, but regenerate the `Rapp`
+launcher on each machine rather than tracking it in Git.
+
+```sh
+rupdate             # Check for updates and install them
+rupdate --dry-run   # List updates without installing
+rupdate --help      # Show help
+```
+
 ## Checks
 
     zsh -n ~/.zshenv ~/.config/zsh/.zprofile ~/.config/zsh/.zshrc
