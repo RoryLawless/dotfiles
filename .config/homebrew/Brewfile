@@ -132,6 +132,8 @@ cask "meld"
 cask "netnewswire@beta"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# AI coding agent desktop client
+cask "opencode-desktop"
 # Local-first alternative to Logitech Options+ for HID++ devices
 cask "openlogi"
 # Browse, manage, inspect containers and images
