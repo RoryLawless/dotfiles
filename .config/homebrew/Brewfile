@@ -114,6 +114,8 @@ cask "coteditor"
 cask "discord"
 # Launcher for *Epic Games* games
 cask "epic-games"
+# Collaborative team software
+cask "figma"
 # Web browser
 cask "firefox"
 # Terminal emulator that uses platform-native UI and GPU acceleration
