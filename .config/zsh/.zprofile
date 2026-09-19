@@ -10,6 +10,13 @@ elif [[ -x /usr/local/bin/brew ]]; then
 fi
 export HOMEBREW_BUNDLE_FILE="$XDG_CONFIG_HOME/homebrew/Brewfile"
 
+# Secrets: KEY=value lines, untracked
+if [[ -r "$XDG_CONFIG_HOME/.env" ]]; then
+  set -a
+  source "$XDG_CONFIG_HOME/.env"
+  set +a
+fi
+
 # PATH: keep unique, user tool dirs ahead of system paths
 typeset -U path
 path=(
