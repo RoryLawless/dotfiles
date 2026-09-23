@@ -13,7 +13,6 @@
         "editor.tabSize": 2
     },
     "chat.agentsControl.enabled": "hidden",
-    "chat.disableAIFeatures": false,
     "chat.titleBar.openInAgentsWindow.enabled": false,
     "chat.unifiedAgentsBar.enabled": true,
     "console.showNotebookConsoleActions": true,

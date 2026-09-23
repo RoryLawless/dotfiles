@@ -16,8 +16,6 @@ brew "readline"
 brew "xz"
 # Simple wrapper script for the Borg backup software
 brew "borgmatic"
-# CLI tool for Cloudflare Workers
-brew "cloudflare-wrangler"
 # Cross-platform make
 brew "cmake"
 # Diff that understands syntax
