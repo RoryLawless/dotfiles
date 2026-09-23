@@ -78,10 +78,7 @@ EOF
 [user]
     name = Rory Lawless
     email =
-    signingkey = ssh-ed25519 ...
-
-[gpg "ssh"]
-    program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+    signingkey = ~/.ssh/git-personal
 EOF
 
 mkdir -p "$HOME/.config/borgmatic"
@@ -92,7 +89,7 @@ cat <<'EOF'
 
 Done. Finish by hand (details in ~/.config/dotfiles/README.md):
   - Fill in ~/.config/git/config.local.
-  - Enable the 1Password SSH agent, then switch origin to SSH.
+  - Restore ~/.ssh/git-personal (the commit signing key), then switch origin to SSH.
   - Restore ~/.Renviron and ~/.daily-backup/borgmatic.yaml, then register the backup LaunchAgent.
   - Open a new terminal.
 EOF
