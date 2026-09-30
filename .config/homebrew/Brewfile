@@ -1,11 +1,11 @@
-tap "anomalyco/tap"
+tap "anomalyco/tap", trusted: true
 tap "borgbackup/tap", trusted: true
 tap "libkrun/krun", trusted: true
 tap "oven-sh/bun", trusted: true
 # Fast and opinionated formatter for R code
 brew "air"
 # Cryptography and SSL/TLS Toolkit
-brew "openssl@3", link: true
+brew "openssl@3"
 # C library of Git core methods that is re-entrant and linkable
 brew "libgit2"
 # Clone of cat(1) with syntax highlighting and Git integration
