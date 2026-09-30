@@ -3,14 +3,10 @@
         "editor.defaultFormatter": "charliermarsh.ruff"
     },
     "[quarto]": {
-        "editor.defaultFormatter": "quarto.quarto",
-        "editor.indentSize": "tabSize",
-        "editor.tabSize": 2
+        "editor.defaultFormatter": "quarto.quarto"
     },
     "[r]": {
-        "editor.defaultFormatter": "Posit.air-vscode",
-        "editor.indentSize": "tabSize",
-        "editor.tabSize": 2
+        "editor.defaultFormatter": "Posit.air-vscode"
     },
     "chat.agentsControl.enabled": "hidden",
     "chat.titleBar.openInAgentsWindow.enabled": false,

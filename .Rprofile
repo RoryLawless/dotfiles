@@ -5,7 +5,8 @@ options(
   repos = c(
     CRAN = "https://packagemanager.posit.co/cran/latest",
     STAN = "https://stan-dev.r-universe.dev",
-    MM   = "https://milesmcbain.r-universe.dev"
+    MM   = "https://milesmcbain.r-universe.dev",
+    ropenscireviewtools = "https://ropensci-review-tools.r-universe.dev"
   ),
   tigris_use_cache = TRUE,
   Ncpus = max(1L, parallel::detectCores() - 1L, na.rm = TRUE)

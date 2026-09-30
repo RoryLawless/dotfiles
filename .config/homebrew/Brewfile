@@ -1,11 +1,11 @@
 tap "anomalyco/tap"
 tap "borgbackup/tap", trusted: true
-tap "libkrun/krun", "https://github.com/libkrun/homebrew-krun.git", trusted: true
+tap "libkrun/krun", trusted: true
 tap "oven-sh/bun", trusted: true
 # Fast and opinionated formatter for R code
 brew "air"
 # Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
+brew "openssl@3", link: true
 # C library of Git core methods that is re-entrant and linkable
 brew "libgit2"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -58,6 +58,8 @@ brew "llvm"
 brew "mergiraf", args: ["HEAD"]
 # Deep clean and optimize your Mac
 brew "mole"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
 # General purpose programming language in the ML family
 brew "ocaml"
 # OCaml package manager
@@ -92,8 +94,8 @@ brew "zsh-syntax-highlighting"
 brew "anomalyco/tap/opencode", trusted: true
 # Deduplicating archiver with compression and authenticated encryption
 brew "borgbackup/tap/borgbackup-fuse"
-# CLI tool to start Linux KVM or macOS HVF VMs using the libkrun
-brew "libkrun/krun/krunkit", trusted: true
+# Dynamic library providing KVM-based process isolation capabilities
+brew "libkrun/krun/libkrun"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
 # Desktop password and login vault
@@ -122,6 +124,8 @@ cask "ghostty"
 cask "github"
 # Client for the Google Drive storage service
 cask "google-drive"
+# Native desktop AI assistant from Google
+cask "google-gemini"
 # Keyboard customiser
 cask "karabiner-elements"
 # File system integration
