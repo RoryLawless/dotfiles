@@ -4,10 +4,10 @@ tap "libkrun/krun", trusted: true
 tap "oven-sh/bun", trusted: true
 # Fast and opinionated formatter for R code
 brew "air"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
 # C library of Git core methods that is re-entrant and linkable
 brew "libgit2"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Library for command-line editing
@@ -90,14 +90,18 @@ brew "zsh-autosuggestions"
 brew "zsh-completions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-# The AI coding agent built for the terminal.
-brew "anomalyco/tap/opencode", trusted: true
+# OpenCode V2 - the AI coding agent for the terminal
+brew "anomalyco/tap/opencode-v2", trusted: true
 # Deduplicating archiver with compression and authenticated encryption
 brew "borgbackup/tap/borgbackup-fuse"
 # Dynamic library providing KVM-based process isolation capabilities
 brew "libkrun/krun/libkrun"
+# CLI tool to start Linux KVM or macOS HVF VMs using the libkrun
+brew "libkrun/krun/krunkit", trusted: true
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
+# Terminal interface for Antigravity agents
+cask "antigravity-cli"
 # Desktop password and login vault
 cask "bitwarden"
 # OpenAI's official ChatGPT desktop app
@@ -112,8 +116,6 @@ cask "codex"
 cask "coteditor"
 # Voice and text chat software
 cask "discord"
-# Launcher for *Epic Games* games
-cask "epic-games"
 # Collaborative team software
 cask "figma"
 # Web browser
@@ -126,8 +128,12 @@ cask "github"
 cask "google-drive"
 # Native desktop AI assistant from Google
 cask "google-gemini"
+# Speech to text application
+cask "handy"
 # Keyboard customiser
 cask "karabiner-elements"
+# Audible audiobook manager and liberator
+cask "libation"
 # File system integration
 cask "macfuse"
 # Visual diff and merge tool
@@ -136,8 +142,6 @@ cask "meld"
 cask "netnewswire@beta"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
-# AI coding agent desktop client
-cask "opencode-desktop"
 # Local-first alternative to Logitech Options+ for HID++ devices
 cask "openlogi"
 # Browse, manage, inspect containers and images
@@ -160,9 +164,11 @@ cask "vlc"
 cask "whatsapp"
 # Full-featured companion app to the YubiKey
 cask "yubico-authenticator"
-# Open-source markdown editor
-cask "zettlr"
+# Multiplayer code editor
+cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
 # Collect, organise, cite, and share research sources
 cask "zotero"
+# Desktop client for the Zulip team chat platform
+cask "zulip"
