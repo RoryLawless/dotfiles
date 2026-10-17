@@ -11,6 +11,8 @@
     "ai.mcp.enabled": true,
     "ai.mcp.statusBar": true,
     "assistant.previewFeatures": true,
+    "claudeCode.hideOnboarding": true,
+    "claudeCode.preferredLocation": "panel",
     "console.showNotebookConsoleActions": true,
     "console.showNotebookConsoles": true,
     "dataExplorer.enablePreview": true,
@@ -50,12 +52,15 @@
     "git.enableCommitSigning": true,
     "git.enableSmartCommit": true,
     "git.suggestions.model": [
-        "mistral-small-latest"
+        "mistral-large-latest"
     ],
     "github.copilot.enable": {
         "*": false
     },
     "github.copilot.nextEditSuggestions.enabled": false,
+    "nextEditSuggestions.enabled": {
+        "*": false
+    },
     "notebook.diff.ignoreMetadata": true,
     "notebook.diff.ignoreOutputs": true,
     "notebook.formatOnCellExecution": true,
@@ -89,7 +94,7 @@
     "ty.completions.completeFunctionParentheses": true,
     "window.autoDetectColorScheme": true,
     "window.commandCenter": true,
-    "workbench.activityBar.location": "top",
+    "workbench.activityBar.compact": true,
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.keybindings.rstudioKeybindings": true,
     "workbench.preferredDarkColorTheme": "Dark 2026",

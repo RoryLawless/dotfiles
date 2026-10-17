@@ -154,6 +154,8 @@ cask "quarto"
 cask "r-app"
 # Control your tools with a few keystrokes
 cask "raycast"
+# Instant messaging application focusing on security
+cask "signal"
 # Music streaming service
 cask "spotify"
 # Mesh VPN based on WireGuard
