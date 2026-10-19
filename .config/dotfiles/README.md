@@ -42,9 +42,11 @@ Three files hold secrets and are excluded from git in `~/.cfg/info/exclude`:
 
 The script installs the Command Line Tools if they are missing, clones the
 repository over HTTPS, moves any file the checkout would overwrite to
-`~/.cfg-backup`, checks out, writes the exclude rules, installs Homebrew, runs
-`brew bundle`, writes templates for `local.zsh` and `config.local`, and creates the borgmatic
-config symlink. Once
+`~/.cfg-backup/checkout.*`, checks out, writes the exclude rules, installs
+Homebrew, runs `brew bundle`, writes templates for `local.zsh` and
+`config.local`, and creates the borgmatic config symlink and backup log
+directory. An interrupted first checkout resumes
+on the next run, with a separate backup directory for each attempt. Once
 the checkout exists, `zsh ~/.config/dotfiles/install.sh` runs the same steps
 and is safe to repeat.
 

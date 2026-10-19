@@ -54,6 +54,7 @@ used.
 Install borgmatic from the Brewfile, restore `borgmatic.yaml` with mode 600,
 and register the plist, which the dotfiles checkout puts in place:
 
+    mkdir -p ~/Library/Logs/borg
     launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.borg.backup.plist
 
 The Keychain item that the passphrase command reads and SSH access to the

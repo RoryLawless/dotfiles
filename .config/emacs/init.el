@@ -40,5 +40,5 @@
 
 ;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line
 ;; Optional: generate opam-user-setup.el with `opam user-setup install`.
-(require 'opam-user-setup (expand-file-name "opam-user-setup.el" user-emacs-directory) t)
+;; (require 'opam-user-setup (expand-file-name "opam-user-setup.el" user-emacs-directory) t)
 ;; ## end of OPAM user-setup addition for emacs / base ## keep this line

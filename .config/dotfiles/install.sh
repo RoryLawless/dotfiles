@@ -22,19 +22,28 @@ fi
 #    refspec and no upstream, and `config pull` fails without them.
 if [[ ! -d $git_dir ]]; then
   git clone --bare "$repo" "$git_dir"
+fi
+
+# A bare clone has no index until its first checkout. Keep a marker as well
+# so interruption during checkout can be recovered on the next run.
+checkout_pending="$git_dir/dotfiles-checkout-pending"
+if [[ ! -f $git_dir/index || -e $checkout_pending ]]; then
+  touch "$checkout_pending"
   config config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
   config fetch origin
   config branch --set-upstream-to=origin/main main
 
   # Move aside anything the checkout would overwrite, then check out.
-  backup="$HOME/.cfg-backup"
+  mkdir -p "$HOME/.cfg-backup"
+  backup=$(mktemp -d "$HOME/.cfg-backup/checkout.XXXXXX")
   config ls-tree -rz --name-only HEAD | while IFS= read -r -d '' f; do
     [[ -e $HOME/$f || -L $HOME/$f ]] || continue
     mkdir -p "$backup/${f:h}"
     mv "$HOME/$f" "$backup/$f"
   done
   [[ ! -d $backup ]] || echo "Pre-existing files moved to $backup"
-  config checkout
+  config checkout HEAD -- :/
+  rm "$checkout_pending"
 fi
 config config status.showUntrackedFiles no
 
@@ -81,7 +90,7 @@ EOF
     signingkey = ~/.ssh/git-personal
 EOF
 
-mkdir -p "$HOME/.config/borgmatic"
+mkdir -p "$HOME/.config/borgmatic" "$HOME/Library/Logs/borg"
 [[ -L $HOME/.config/borgmatic/config.yaml ]] ||
   ln -s "$HOME/.daily-backup/borgmatic.yaml" "$HOME/.config/borgmatic/config.yaml"
 

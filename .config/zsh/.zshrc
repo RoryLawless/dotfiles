@@ -72,8 +72,7 @@ fi
 unset git_prompt
 
 # Defaults
-export EDITOR="cot -w"
-[[ -n $SSH_CONNECTION ]] && export EDITOR="emacs -nw"   # no GUI over SSH
+export EDITOR="emacs -nw"
 export VISUAL="$EDITOR"
 export GPG_TTY=$(tty)
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -91,7 +90,10 @@ alias positron='open /Applications/Positron.app'
 alias cat='bat'
 
 # Typing a data file's name prints its first rows
-peek() { duckdb -c "SELECT * FROM '$1' LIMIT 20" }
+peek() {
+  local filename=${1//\'/\'\'}
+  duckdb -c "SELECT * FROM '$filename' LIMIT 20"
+}
 alias -s {csv,parquet,json}=peek
 
 # opam

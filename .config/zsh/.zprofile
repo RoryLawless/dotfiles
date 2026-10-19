@@ -18,7 +18,7 @@ if [[ -r "$XDG_CONFIG_HOME/.env" ]]; then
 fi
 
 # PATH: keep unique, user tool dirs ahead of system paths
-typeset -U path
+typeset -U PATH path
 path=(
   "$HOME/.pixi/bin"
   "$HOME/.cargo/bin"

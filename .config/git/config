@@ -9,7 +9,7 @@
 
 [core]
     pager = delta
-    # No editor set here: git falls back to $EDITOR (cot -w, or emacs -nw over SSH).
+    # No editor set here: git falls back to the shell's editor setting (emacs -nw).
     # attributesFile and excludesFile default to ~/.config/git/attributes and ~/.config/git/ignore.
 
 [feature]
