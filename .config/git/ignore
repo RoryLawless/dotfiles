@@ -10,3 +10,4 @@ tmp
 .positron
 *~
 .env
+**/.claude/.cc-writes/
