@@ -14,6 +14,15 @@ tracked. `~/Library/LaunchAgents/com.borg.backup.plist` is the schedule and is
 tracked too. Output goes to `~/Library/Logs/borg/borg-backup-out.log` and
 `borg-backup-err.log`.
 
+## Coverage
+
+The home-directory backup includes `~/repos`, including Git metadata and
+uncommitted work. Under `~/Library`, it includes Messages, Preferences,
+LaunchAgents, Fonts, and `Application Support/Positron/User`. Other
+Application Support directories remain excluded. The filename exclusions in
+`borg-exclude` (including `*.log`, `*.cache`, and `*.out`) still apply inside
+repositories. Repository caches and dependencies can increase backup size.
+
 ## Schedule
 
 The LaunchAgent runs this at 19:00 with `/opt/homebrew/bin` on PATH:

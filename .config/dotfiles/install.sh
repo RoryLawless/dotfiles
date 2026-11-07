@@ -51,11 +51,11 @@ config config status.showUntrackedFiles no
 exclude="$git_dir/info/exclude"
 for rule in \
   .config/zsh/local.zsh \
+  .config/zsh/.zsh_sessions/ \
   .config/git/config.local \
   .config/karabiner/automatic_backups/ \
   .config/karabiner/assets/ \
   .config/emacs/elpa/ \
-  .config/emacs/opam-user-setup.el \
   .config/emacs/auto-save-list/ \
   .config/emacs/eln-cache/ \
   .config/borgmatic/config.yaml \
@@ -74,6 +74,9 @@ if [[ ! -x $brew_prefix/bin/brew ]]; then
 fi
 eval "$($brew_prefix/bin/brew shellenv zsh)"
 brew bundle install --file="$HOME/.config/homebrew/Brewfile"
+
+# Restore the tracked global tools and their zsh completion links.
+zsh "$HOME/.config/dotfiles/sync-pixi.zsh"
 
 # 5. Untracked local files: templates if absent, and the symlink that lets
 #    borgmatic find its configuration without -c.
@@ -100,5 +103,6 @@ Done. Finish by hand (details in ~/.config/dotfiles/README.md):
   - Fill in ~/.config/git/config.local.
   - Restore ~/.ssh/git-personal (the commit signing key), then switch origin to SSH.
   - Restore ~/.Renviron and ~/.daily-backup/borgmatic.yaml, then register the backup LaunchAgent.
+  - Install R with `rig add release` if this machine has no R installation.
   - Open a new terminal.
 EOF

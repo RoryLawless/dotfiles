@@ -94,10 +94,25 @@
     "ty.completions.completeFunctionParentheses": true,
     "window.autoDetectColorScheme": true,
     "window.commandCenter": true,
-    "workbench.activityBar.compact": true,
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.keybindings.rstudioKeybindings": true,
     "workbench.preferredDarkColorTheme": "Dark 2026",
     "workbench.preferredLightColorTheme": "Light 2026",
-    "workbench.settings.alwaysShowAdvancedSettings": true
+    "workbench.settings.alwaysShowAdvancedSettings": true,
+    "git.addAICoAuthor": "chatAndAgent",
+    "air.executableStrategy": "path",
+    "air.executablePath": "/Users/rory/.config/pixi/bin/air",
+    "jarl.executableStrategy": "path",
+    "jarl.executablePath": "/Users/rory/.config/pixi/bin/jarl",
+    "ruff.path": [
+        "/Users/rory/.config/pixi/bin/ruff"
+    ],
+    "ruff.lint.preview": true,
+    "ty.path": [
+        "/Users/rory/.config/pixi/bin/ty"
+    ],
+    "quarto.path": "/Users/rory/.config/pixi/bin/quarto",
+    "accessibility.signalOptions.debouncePositionChanges": true,
+    "ai.agentSessions.enabled": true,
+    "sql.enabled": true
 }

@@ -1,0 +1,46 @@
+version = 1
+
+[envs.air]
+channels = ["conda-forge"]
+dependencies = { air = "*" }
+exposed = { air = "air" }
+
+[envs.duckdb-cli]
+channels = ["conda-forge"]
+dependencies = { duckdb-cli = "*" }
+exposed = { duckdb = "duckdb" }
+
+[envs.jarl]
+channels = ["conda-forge"]
+dependencies = { jarl = "*" }
+exposed = { jarl = "jarl" }
+
+[envs.python-lsp-server]
+channels = ["conda-forge"]
+dependencies = { python-lsp-server = "*" }
+exposed = { pylsp = "pylsp" }
+
+[envs.quarto]
+channels = ["conda-forge"]
+dependencies = { quarto = "*" }
+exposed = { quarto = "quarto", "quarto.js" = "quarto.js" }
+
+[envs.ruff]
+channels = ["conda-forge"]
+dependencies = { ruff = "*" }
+exposed = { ruff = "ruff" }
+
+[envs.ty]
+channels = ["conda-forge"]
+dependencies = { ty = "*" }
+exposed = { ty = "ty" }
+
+[envs.cookiecutter-data-science]
+channels = ["conda-forge"]
+dependencies = { cookiecutter-data-science = "*" }
+exposed = { ccds = "ccds" }
+
+[envs.marimo]
+channels = ["conda-forge"]
+dependencies = { marimo = "*" }
+exposed = { marimo = "marimo" }

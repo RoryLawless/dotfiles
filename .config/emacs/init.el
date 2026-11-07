@@ -28,17 +28,3 @@
 (global-set-key [f3] 'next-match)
 (defun prev-match () (interactive nil) (next-match -1))
 (global-set-key [(shift f3)] 'prev-match)
-
-;; OCaml: better error and backtrace matching
-(defun set-ocaml-error-regexp ()
-  (set
-   'compilation-error-regexp-alist
-   (list '("[Ff]ile \\(\"\\(.*?\\)\", line \\(-?[0-9]+\\)\\(, characters \\(-?[0-9]+\\)-\\([0-9]+\\)\\)?\\)\\(:\n\\(\\(Warning .*?\\)\\|\\(Error\\)\\):\\)?"
-    2 3 (5 . 6) (9 . 11) 1 (8 compilation-message-face)))))
-(add-hook 'tuareg-mode-hook 'set-ocaml-error-regexp)
-(add-hook 'caml-mode-hook 'set-ocaml-error-regexp)
-
-;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line
-;; Optional: generate opam-user-setup.el with `opam user-setup install`.
-;; (require 'opam-user-setup (expand-file-name "opam-user-setup.el" user-emacs-directory) t)
-;; ## end of OPAM user-setup addition for emacs / base ## keep this line

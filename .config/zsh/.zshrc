@@ -33,9 +33,12 @@ if [[ -n $HOMEBREW_PREFIX ]]; then
   fpath=(
     "$HOMEBREW_PREFIX/share/zsh-completions"
     "$HOMEBREW_PREFIX/share/zsh/site-functions"
+
     $fpath
   )
 fi
+
+fpath+=("$PIXI_HOME/completions/zsh")
 
 # File colors for completion lists, fzf-tab and eza
 export LS_COLORS='di=1;34:ln=1;36:so=1;35:pi=33:ex=1;32:bd=1;33:cd=1;33:or=31:mi=31'
@@ -95,9 +98,6 @@ peek() {
   duckdb -c "SELECT * FROM '$filename' LIMIT 20"
 }
 alias -s {csv,parquet,json}=peek
-
-# opam
-[[ ! -r "$HOME/.opam/opam-init/init.zsh" ]] || source "$HOME/.opam/opam-init/init.zsh" > /dev/null 2>&1
 
 # zoxide: z jumps to a directory you have visited, zi picks one with fzf
 eval "$(zoxide init zsh)"

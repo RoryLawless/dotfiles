@@ -22,7 +22,7 @@ for machine-specific settings.
 `~/.config/git` holds the git config, global attributes and global ignore.
 Identity and signing key are in `config.local` next to them, untracked.
 
-`~/.config/homebrew` holds the Brewfile and `brew.env`. Emacs, OCaml, air,
+`~/.config/homebrew` holds the Brewfile and `brew.env`. Emacs, air,
 jarl, cookiecutter, karabiner and ghostty are configured under `~/.config` as
 well. Positron settings are tracked at
 `~/Library/Application Support/Positron/User/settings.json`, and the backup
@@ -43,8 +43,9 @@ Three files hold secrets and are excluded from git in `~/.cfg/info/exclude`:
 The script installs the Command Line Tools if they are missing, clones the
 repository over HTTPS, moves any file the checkout would overwrite to
 `~/.cfg-backup/checkout.*`, checks out, writes the exclude rules, installs
-Homebrew, runs `brew bundle`, writes templates for `local.zsh` and
-`config.local`, and creates the borgmatic config symlink and backup log
+Homebrew, runs `brew bundle`, restores Pixi tools and completion links,
+writes templates for `local.zsh` and `config.local`, and creates the
+borgmatic config symlink and backup log
 directory. An interrupted first checkout resumes
 on the next run, with a separate backup directory for each attempt. Once
 the checkout exists, `zsh ~/.config/dotfiles/install.sh` runs the same steps
@@ -58,7 +59,32 @@ Then finish by hand:
    `config remote set-url origin git@github.com:RoryLawless/dotfiles.git`
 4. Restore `~/.Renviron` and `~/.daily-backup/borgmatic.yaml` with mode 600.
 5. Register the backup LaunchAgent as described in `~/.daily-backup/README.md`.
-6. Open a new terminal.
+6. Install R with `rig add release` if the machine has no R installation.
+   Installing `r-rig` alone does not install R.
+7. Open a new terminal.
+
+### Pixi global tools
+
+`~/.config/pixi/manifests/pixi-global.toml` records the global tools and
+exposed command names. Keep changes made by `pixi global install`,
+`uninstall`, or `expose` in the dotfiles repository. This manifest records
+package requirements, not an exact lock of installed versions.
+
+The installer restores these tools automatically. To repeat this separately:
+
+```sh
+zsh ~/.config/dotfiles/sync-pixi.zsh
+```
+
+The helper runs `pixi global sync`, links package-provided zsh completions,
+and invalidates the completion dump when links change. Homebrew manages
+Pixi itself; Pixi manages Air, Jarl, Ruff, Ty, DuckDB, and Quarto.
+
+Set `PIXI_HOME` before installing environments. Moving existing environment
+directories can leave absolute interpreter and activation paths pointing to
+the old location; `global sync` alone may not repair those paths. Reinstall
+the affected packages with `pixi global install --force-reinstall`, preserving
+any explicit exposure mappings (such as `pylsp`).
 
 ### R package updater
 

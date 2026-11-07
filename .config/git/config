@@ -47,7 +47,7 @@
 [fetch]
     fsckobjects = true
     prune = true
-    prunetags = true
+    pruneTags = false
 
 [receive]
     fsckObjects = true
@@ -117,8 +117,3 @@
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
     required = true
-
-[lfs "customtransfer.xet"]
-    path = git-xet
-    args = transfer
-    concurrent = true

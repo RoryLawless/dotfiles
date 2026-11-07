@@ -20,7 +20,7 @@ fi
 # PATH: keep unique, user tool dirs ahead of system paths
 typeset -U PATH path
 path=(
-  "$HOME/.pixi/bin"
+  "$PIXI_HOME/bin"
   "$HOME/.cargo/bin"
   "$HOME/.local/bin"
   $path

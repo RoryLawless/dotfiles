@@ -13,8 +13,13 @@ trap 'rm -rf -- "$fixture_root"' EXIT
 mkdir -p "$fixture_root/home" "$fixture_root/tree/Users/rory"
 fixture_home="$fixture_root/tree/Users/rory"
 
-included=(.Rprofile .config/zsh/.zshrc Documents/check.txt Library/Preferences/check.plist Library/Messages/check.txt)
-excluded=(Downloads/check.txt Library/Caches/check.txt repos/check.txt Documents/check.log)
+included=(.Rprofile .config/zsh/.zshrc Documents/check.txt Library/Preferences/check.plist Library/Messages/check.txt
+  repos/project/uncommitted.R repos/project/.git/HEAD
+  'Library/Application Support/Positron/User/settings.json')
+excluded=(Downloads/check.txt Library/Caches/check.txt Documents/check.log
+  'Library/Application Support/OtherApp/check.txt'
+  'Library/Application Support/Positron/Cache/check.txt'
+  'Library/PreferencesOther/check.txt')
 for relative in "${included[@]}" "${excluded[@]}"; do
   target="$fixture_home/$relative"
   mkdir -p -- "${target:h}"
@@ -43,4 +48,4 @@ for relative in "${excluded[@]}"; do
     print -ru2 -- "Unexpected archive member: $relative"; exit 1
   fi
 done
-print -r -- 'ok - archive includes five intended files and excludes four unwanted files'
+print -r -- "ok - archive includes $#included intended files and excludes $#excluded unwanted files"
