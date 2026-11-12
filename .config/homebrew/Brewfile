@@ -1,6 +1,5 @@
 tap "anomalyco/tap", trusted: true
 tap "borgbackup/tap", trusted: true
-tap "libkrun/krun", trusted: true
 # C library of Git core methods that is re-entrant and linkable
 brew "libgit2"
 # Cryptography and SSL/TLS Toolkit
@@ -22,7 +21,7 @@ brew "difftastic"
 # GNU internationalization (i18n) and localization (l10n) library
 brew "gettext"
 # GNU Emacs text editor
-brew "emacs", restart_service: :changed
+brew "emacs"
 # Modern, maintained replacement for ls
 brew "eza"
 # Command-line fuzzy finder written in Go
@@ -37,8 +36,6 @@ brew "git"
 brew "git-delta"
 # Git extension for versioning large files
 brew "git-lfs"
-# Source code tag system
-brew "global"
 # Render markdown on the CLI
 brew "glow"
 # GNU Privacy Guard (OpenPGP)
@@ -53,12 +50,8 @@ brew "mergiraf", args: ["HEAD"]
 brew "mole"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
-# OCaml package manager
-brew "opam"
 # Package management made easy
 brew "pixi"
-# Tool for managing OCI containers and pods
-brew "podman"
 # R Installation Manager
 brew "r-rig"
 # 7-Zip is a file archiver with a high compression ratio
@@ -67,12 +60,8 @@ brew "sevenzip"
 brew "skills"
 # Easiest, most secure way to use WireGuard and 2FA
 brew "tailscale"
-# Granddaddy of HTML tools, with support for modern standards
-brew "tidy-html5"
 # Official tldr client written in Rust
 brew "tlrc"
-# General-purpose lossless data-compression library
-brew "zlib", link: true
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # Fish-like fast/unobtrusive autosuggestions for zsh
@@ -85,10 +74,6 @@ brew "zsh-syntax-highlighting"
 brew "anomalyco/tap/opencode-v2", trusted: true
 # Deduplicating archiver with compression and authenticated encryption
 brew "borgbackup/tap/borgbackup-fuse"
-# Dynamic library providing KVM-based process isolation capabilities
-brew "libkrun/krun/libkrun"
-# CLI tool to start Linux KVM or macOS HVF VMs using the libkrun
-brew "libkrun/krun/krunkit", trusted: true
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
 # Anthropic's official Claude AI desktop app
@@ -109,8 +94,6 @@ cask "ghostty"
 cask "github"
 # Client for the Google Drive storage service
 cask "google-drive"
-# Native desktop AI assistant from Google
-cask "google-gemini"
 # Keyboard customiser
 cask "karabiner-elements"
 # Audible audiobook manager and liberator
@@ -125,8 +108,6 @@ cask "netnewswire@beta"
 cask "obsidian"
 # Local-first alternative to Logitech Options+ for HID++ devices
 cask "openlogi"
-# Browse, manage, inspect containers and images
-cask "podman-desktop"
 # Data science IDE
 cask "positron"
 # Control your tools with a few keystrokes

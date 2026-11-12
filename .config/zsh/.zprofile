@@ -21,7 +21,6 @@ fi
 typeset -U PATH path
 path=(
   "$PIXI_HOME/bin"
-  "$HOME/.cargo/bin"
   "$HOME/.local/bin"
   $path
 )
