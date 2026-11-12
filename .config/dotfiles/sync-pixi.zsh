@@ -4,7 +4,7 @@ emulate -L zsh
 setopt errexit nounset pipefail
 
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
-export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/Library/Caches}"
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 export PIXI_HOME="${PIXI_HOME:-$XDG_CONFIG_HOME/pixi}"
 [[ -r "$PIXI_HOME/manifests/pixi-global.toml" ]] || {
   print -ru2 -- "Missing global manifest: $PIXI_HOME/manifests/pixi-global.toml"

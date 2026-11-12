@@ -16,6 +16,9 @@ Commits are signed with the SSH key at `~/.ssh/git-personal`.
 `~/.zshenv` is the only zsh file in the home directory. It sets the XDG
 variables and points `ZDOTDIR` at `~/.config/zsh`, which holds `.zprofile`
 (Homebrew, PATH, tool environment variables) and `.zshrc` (interactive setup).
+`XDG_CACHE_HOME` is set explicitly to `~/.cache`, the default, because
+`.zshrc` and `sync-pixi.zsh` build cache paths from it and GUI and launchd
+processes, which do not read `.zshenv`, fall back to the same directory.
 `~/.config/zsh/local.zsh` is untracked and is sourced near the end of `.zshrc`
 for machine-specific settings.
 
@@ -25,16 +28,20 @@ Identity and signing key are in `config.local` next to them, untracked.
 `~/.config/homebrew` holds the Brewfile and `brew.env`. Emacs, air,
 jarl, cookiecutter, karabiner and ghostty are configured under `~/.config` as
 well. Positron settings are tracked at
-`~/Library/Application Support/Positron/User/settings.json`, and the backup
-LaunchAgent at `~/Library/LaunchAgents/com.borg.backup.plist`.
+`~/Library/Application Support/Positron/User/settings.json`, and the borg and
+imap-backup LaunchAgents at `~/Library/LaunchAgents/com.borg.backup.plist` and
+`com.rory.imap-backup.daily.plist`.
 
 `~/.Rprofile` sets the R package repositories and interactive options.
 
 `~/.daily-backup` holds the borg backup patterns and its own README.
 
-Three files hold secrets and are excluded from git in `~/.cfg/info/exclude`:
-`~/.Renviron`, `~/.daily-backup/borgmatic.yaml` and
+Five files hold secrets or machine-specific settings and are excluded from
+git in `~/.cfg/info/exclude`: `~/.Renviron`, `~/.config/.env`,
+`~/.config/zsh/local.zsh`, `~/.daily-backup/borgmatic.yaml` and
 `~/.config/git/config.local`. The install script maintains the exclude list.
+`~/.imap-email-backup` holds the imap-backup configuration and mail data and
+is never added to the repository.
 
 ## New machine
 
@@ -78,7 +85,8 @@ zsh ~/.config/dotfiles/sync-pixi.zsh
 
 The helper runs `pixi global sync`, links package-provided zsh completions,
 and invalidates the completion dump when links change. Homebrew manages
-Pixi itself; Pixi manages Air, Jarl, Ruff, Ty, DuckDB, and Quarto.
+Pixi itself; Pixi manages Air, Jarl, Ruff, Ty, DuckDB, Quarto, Marimo, the
+Python language server, and the cookiecutter-data-science CLI.
 
 Set `PIXI_HOME` before installing environments. Moving existing environment
 directories can leave absolute interpreter and activation paths pointing to

@@ -50,6 +50,7 @@ config config status.showUntrackedFiles no
 # 3. Machine-specific files that git should ignore. Append only what is missing.
 exclude="$git_dir/info/exclude"
 for rule in \
+  .config/.env \
   .config/zsh/local.zsh \
   .config/zsh/.zsh_sessions/ \
   .config/git/config.local \
