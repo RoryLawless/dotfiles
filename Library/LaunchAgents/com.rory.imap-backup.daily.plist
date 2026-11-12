@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>com.rory.imap-backup.daily</string>
+
+    <key>ProgramArguments</key>
+    <array>
+      <string>/bin/zsh</string>
+      <string>-lc</string>
+      <string>set -euo pipefail; source "$HOME/.imap-email-backup/imap-backup.env"; IMAP_BACKUP_PASSWORD="$(/usr/bin/security find-generic-password -w -a "$IMAP_EMAIL" -s "${IMAP_KEYCHAIN_SERVICE:-imap-backup}")"; IMAP_BACKUP_PASSWORD="$IMAP_BACKUP_PASSWORD" /opt/homebrew/bin/imap-backup single backup --email "$IMAP_EMAIL" --server "$IMAP_SERVER" --password-environment-variable IMAP_BACKUP_PASSWORD --path "$IMAP_BACKUP_DIR" --refresh</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/rory</string>
+
+    <key>StartCalendarInterval</key>
+    <dict>
+      <key>Hour</key>
+      <integer>17</integer>
+      <key>Minute</key>
+      <integer>30</integer>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/Users/rory/.imap-email-backup/logs/imap-backup.stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/rory/.imap-email-backup/logs/imap-backup.stderr.log</string>
+
+    <key>RunAtLoad</key>
+    <false/>
+  </dict>
+</plist>
