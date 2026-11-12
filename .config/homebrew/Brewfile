@@ -58,8 +58,6 @@ brew "r-rig"
 brew "sevenzip"
 # Open agent skills ecosystem
 brew "skills"
-# Easiest, most secure way to use WireGuard and 2FA
-brew "tailscale"
 # Official tldr client written in Rust
 brew "tlrc"
 # Shell extension to navigate your filesystem faster
