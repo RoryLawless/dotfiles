@@ -3,7 +3,7 @@ R /Users/rory
 
 # Exclusions. Nothing else is needed: a file that matches no pattern is included.
 ! re:^Users/rory/Library/(?!(Messages|Preferences|LaunchAgents|Fonts)(/|$)|Application Support(/Positron(/User(/|$)|$)|$))
-! re:^Users/rory/(Movies|mnt|Public|Applications|Downloads|\.Trash|tmp|\.local/share/containers)(/.*)?$
+! re:^Users/rory/(Movies|mnt|Public|Applications|Downloads|\.Trash|tmp)(/.*)?$
 - **/.DS_Store
 - **/*.log
 - **/*.cache
