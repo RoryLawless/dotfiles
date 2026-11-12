@@ -52,7 +52,7 @@
     "git.enableCommitSigning": true,
     "git.enableSmartCommit": true,
     "git.suggestions.model": [
-        "mistral-large-latest"
+        "mistral-large-4"
     ],
     "github.copilot.enable": {
         "*": false
@@ -114,5 +114,7 @@
     "quarto.path": "/Users/rory/.config/pixi/bin/quarto",
     "accessibility.signalOptions.debouncePositionChanges": true,
     "ai.agentSessions.enabled": true,
-    "sql.enabled": true
+    "sql.enabled": true,
+    "workbench.editor.useModal": "off",
+    "assistant.cacheKeepaliveWidget": true
 }
