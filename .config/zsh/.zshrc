@@ -85,7 +85,7 @@ run-help() { tldr "$@" }
 
 # Aliases
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME/'
-alias ls='eza --long --header --icons=never'
+alias ls='eza --long --header --icons=never --octal-permissions'
 alias python='python3'
 alias update='brew update && brew upgrade --yes && brew cleanup'
 alias positron='open /Applications/Positron.app'

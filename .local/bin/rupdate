@@ -18,6 +18,12 @@ main <- function(dry_run, check = utils::old.packages,
     }
   )
 
+  # R 4.6 also flags same-version rebuilds; pak skips those, so keep only real version bumps.
+  if (!is.null(old) && nrow(old) > 0L) {
+    newer <- package_version(old[, "ReposVer"]) > package_version(old[, "Installed"])
+    old <- old[newer, , drop = FALSE]
+  }
+
   if (is.null(old) || nrow(old) == 0L) {
     message("All packages are up to date.")
     return(invisible(NULL))

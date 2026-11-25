@@ -80,10 +80,6 @@ cask "claude"
 cask "claude-code@latest"
 # OpenAI's coding agent that runs in your terminal
 cask "codex"
-# Plain-text editor for web pages, program source codes and more
-cask "coteditor"
-# Collaborative team software
-cask "figma"
 # Web browser
 cask "firefox"
 # Terminal emulator that uses platform-native UI and GPU acceleration
@@ -92,8 +88,8 @@ cask "ghostty"
 cask "github"
 # Client for the Google Drive storage service
 cask "google-drive"
-# Keyboard customiser
-cask "karabiner-elements"
+# Web browser
+cask "ladybird"
 # Audible audiobook manager and liberator
 cask "libation"
 # File system integration
@@ -110,14 +106,12 @@ cask "openlogi"
 cask "positron"
 # Control your tools with a few keystrokes
 cask "raycast"
-# Instant messaging application focusing on security
-cask "signal"
 # Music streaming service
 cask "spotify"
 # Video game digital distribution service
 cask "steam"
-# Mesh VPN based on WireGuard
-cask "tailscale-app"
+# Text editor for code, markup and prose
+cask "sublime-text"
 # Multimedia player
 cask "vlc"
 # Native desktop client for WhatsApp
