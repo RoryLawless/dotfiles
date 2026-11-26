@@ -65,10 +65,47 @@ Then finish by hand:
 3. Switch the remote to SSH:
    `config remote set-url origin git@github.com:RoryLawless/dotfiles.git`
 4. Restore `~/.Renviron` and `~/.daily-backup/borgmatic.yaml` with mode 600.
-5. Register the backup LaunchAgent as described in `~/.daily-backup/README.md`.
+5. Register the Borg LaunchAgent as described in `~/.daily-backup/README.md`
+   and set up the IMAP LaunchAgent as described below.
 6. Install R with `rig add release` if the machine has no R installation.
    Installing `r-rig` alone does not install R.
 7. Open a new terminal.
+
+### IMAP backup
+
+The Brewfile installs `imap-backup`. The LaunchAgent uses
+`/opt/homebrew/bin/imap-backup` and paths under `/Users/rory`. Adjust the
+plist paths before registering it if your Homebrew prefix or home directory
+differs.
+
+Create `~/.imap-email-backup/logs`. Restore
+`~/.imap-email-backup/imap-backup.env` with mode 600. It contains these shell
+assignments, using your own account, server hostname, and backup directory.
+
+```sh
+IMAP_EMAIL='you@example.com'
+IMAP_SERVER='imap.example.com'
+IMAP_BACKUP_DIR="$HOME/.imap-email-backup/mail"
+```
+
+Create the directory named by `IMAP_BACKUP_DIR` and restore any existing mail
+backup there. Restore the generic password in your login Keychain with the
+account set to `IMAP_EMAIL` and service set to `imap-backup`. If the Keychain
+item uses a different service, set `IMAP_KEYCHAIN_SERVICE` to that name in the
+env file. The job reads the password from the Keychain.
+
+Lint and register the plist from your macOS login session, then verify it is
+loaded.
+
+```sh
+plist="$HOME/Library/LaunchAgents/com.rory.imap-backup.daily.plist"
+plutil -lint "$plist" &&
+  launchctl bootstrap "gui/$(id -u)" "$plist" &&
+  launchctl print "gui/$(id -u)/com.rory.imap-backup.daily"
+```
+
+The job is scheduled for 17:30. After it runs, check the last exit status with
+`launchctl print` and the logs under `~/.imap-email-backup/logs/`.
 
 ### Pixi global tools
 
