@@ -74,22 +74,28 @@ fi
 unset git_prompt
 
 # Defaults
-export EDITOR="emacs -nw"
-export VISUAL="$EDITOR"
+if (( $+commands[emacs] )); then
+  export EDITOR="emacs -nw"
+  export VISUAL="$EDITOR"
+fi
 export GPG_TTY=$(tty)
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+if (( $+commands[col] && $+commands[bat] )); then
+  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+fi
 
 # Alt-H (the built-in run-help widget) shows the tldr page for the command on the line
-unalias run-help 2>/dev/null
-run-help() { tldr "$@" }
+if (( $+commands[tldr] )); then
+  unalias run-help 2>/dev/null
+  function run-help { tldr "$@" }
+fi
 
 # Aliases
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME/'
-alias ls='eza --long --header --icons=never --octal-permissions'
+(( $+commands[eza] )) && alias ls='eza --long --header --icons=never --octal-permissions'
 alias python='python3'
 alias update='brew update && brew upgrade --yes && brew cleanup'
 alias positron='open /Applications/Positron.app'
-alias cat='bat'
+(( $+commands[bat] )) && alias cat='bat'
 
 # Typing a data file's name prints its first rows
 peek() {
@@ -99,11 +105,13 @@ peek() {
 alias -s {csv,parquet,json}=peek
 
 # zoxide: z jumps to a directory you have visited, zi picks one with fzf
-eval "$(zoxide init zsh)"
+(( $+commands[zoxide] )) && eval "$(zoxide init zsh)"
 
 # fzf: Ctrl-R history, Ctrl-T files, Alt-C cd
 export FZF_DEFAULT_OPTS='--height 40% --layout reverse --border'
-export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-range=:200 {}'"
+if (( $+commands[bat] )); then
+  export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-range=:200 {}'"
+fi
 (( $+commands[fzf] )) && source <(fzf --zsh)
 
 # fzf-tab: Tab completion through fzf. Loads after compinit and before the
@@ -111,7 +119,9 @@ export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-ran
 if [[ -r "$HOMEBREW_PREFIX/share/fzf-tab/fzf-tab.zsh" ]]; then
   source "$HOMEBREW_PREFIX/share/fzf-tab/fzf-tab.zsh"
   zstyle ':fzf-tab:*' use-fzf-default-opts yes
-  zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+  if (( $+commands[eza] )); then
+    zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+  fi
   zstyle ':completion:*:git-checkout:*' sort false
 fi
 
