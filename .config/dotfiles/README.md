@@ -163,6 +163,15 @@ rupdate --help      # Show help
 
 ## Checks
 
-    zsh -n ~/.zshenv ~/.config/zsh/.zprofile ~/.config/zsh/.zshrc
+```sh
+(
+    set -e
+    for file in ~/.zshenv ~/.config/zsh/.zprofile ~/.config/zsh/.zshrc \
+        ~/.config/dotfiles/install.sh ~/.config/dotfiles/sync-pixi.zsh \
+        ~/.config/dotfiles/tests/test-backup.zsh; do
+        zsh -n "$file"
+    done
     emacs --batch -l ~/.config/emacs/init.el
     zsh ~/.config/dotfiles/tests/test-backup.zsh
+)
+```
