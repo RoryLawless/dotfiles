@@ -47,16 +47,16 @@ is never added to the repository.
 
     zsh <(curl -fsSL https://raw.githubusercontent.com/RoryLawless/dotfiles/main/.config/dotfiles/install.sh)
 
-The script installs the Command Line Tools if they are missing, clones the
-repository over HTTPS, moves any file the checkout would overwrite to
-`~/.cfg-backup/checkout.*`, checks out, writes the exclude rules, installs
-Homebrew, runs `brew bundle`, restores Pixi tools and completion links,
-writes templates for `local.zsh` and `config.local`, and creates the
-borgmatic config symlink and backup log
-directory. An interrupted first checkout resumes
-on the next run, with a separate backup directory for each attempt. Once
-the checkout exists, `zsh ~/.config/dotfiles/install.sh` runs the same steps
-and is safe to repeat.
+The script installs the Command Line Tools if they are missing and clones the
+repository over HTTPS. Before moving any files, it checks the parent directories
+of tracked paths and stops if it finds a symlink or a non-directory. It moves
+existing files at checkout destinations to `~/.cfg-backup/checkout.*`, checks
+out, writes the exclude rules, installs Homebrew, runs `brew bundle`, restores
+Pixi tools and completion links, writes templates for `local.zsh` and
+`config.local`, and creates the borgmatic config symlink and backup log
+directory. Rerun the script to resume an interrupted first checkout. Each
+checkout attempt uses its own backup directory. Once the checkout exists,
+`zsh ~/.config/dotfiles/install.sh` runs the same steps and is safe to repeat.
 
 Then finish by hand:
 

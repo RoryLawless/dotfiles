@@ -33,10 +33,20 @@ if [[ ! -f $git_dir/index || -e $checkout_pending ]]; then
   config fetch origin
   config branch --set-upstream-to=origin/main main
 
+  # Git can replace a file or symlink where the checkout needs a directory.
+  # Check directory paths before backing up any tracked destinations.
+  config ls-tree -rdz --full-tree --name-only HEAD | while IFS= read -r -d '' directory; do
+    parent="$HOME/$directory"
+    if [[ -L $parent || ( -e $parent && ! -d $parent ) ]]; then
+      print -ru2 -- "Checkout needs a directory at $parent. Move this file or symlink aside and rerun the installer."
+      exit 1
+    fi
+  done
+
   # Move aside anything the checkout would overwrite, then check out.
   mkdir -p "$HOME/.cfg-backup"
   backup=$(mktemp -d "$HOME/.cfg-backup/checkout.XXXXXX")
-  config ls-tree -rz --name-only HEAD | while IFS= read -r -d '' f; do
+  config ls-tree -rz --full-tree --name-only HEAD | while IFS= read -r -d '' f; do
     [[ -e $HOME/$f || -L $HOME/$f ]] || continue
     mkdir -p "$backup/${f:h}"
     mv "$HOME/$f" "$backup/$f"
