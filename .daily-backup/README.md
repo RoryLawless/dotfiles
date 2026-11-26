@@ -23,6 +23,10 @@ Application Support directories remain excluded. The filename exclusions in
 `borg-exclude` (including `*.log`, `*.cache`, and `*.out`) still apply inside
 repositories. Repository caches and dependencies can increase backup size.
 
+The backup includes `~/.config/pixi/manifests/`. Pixi recreates the global tool
+environments in `~/.config/pixi/envs/` when the dotfiles installer runs, so the
+backup excludes that directory.
+
 ## Schedule
 
 The LaunchAgent runs this at 19:00 with `/opt/homebrew/bin` on PATH:

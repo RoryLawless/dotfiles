@@ -13,10 +13,10 @@ trap 'rm -rf -- "$fixture_root"' EXIT
 mkdir -p "$fixture_root/home" "$fixture_root/tree/Users/rory"
 fixture_home="$fixture_root/tree/Users/rory"
 
-included=(.Rprofile .config/zsh/.zshrc Documents/check.txt Library/Preferences/check.plist Library/Messages/check.txt
-  repos/project/uncommitted.R repos/project/.git/HEAD
+included=(.Rprofile .config/zsh/.zshrc .config/pixi/manifests/pixi-global.toml Documents/check.txt
+  Library/Preferences/check.plist Library/Messages/check.txt repos/project/uncommitted.R repos/project/.git/HEAD
   'Library/Application Support/Positron/User/settings.json')
-excluded=(Downloads/check.txt Library/Caches/check.txt Documents/check.log
+excluded=(Downloads/check.txt Library/Caches/check.txt Documents/check.log .config/pixi/envs/ruff/bin/ruff
   'Library/Application Support/OtherApp/check.txt'
   'Library/Application Support/Positron/Cache/check.txt'
   'Library/PreferencesOther/check.txt')
