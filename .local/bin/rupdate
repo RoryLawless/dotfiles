@@ -29,11 +29,13 @@ main <- function(dry_run, check = utils::old.packages,
     return(invisible(NULL))
   }
 
+  writable <- file.access(old[, "LibPath"], 2L) == 0L
   updates <- data.frame(
     Package = old[, "Package"],
     Installed = old[, "Installed"],
     Available = old[, "ReposVer"],
     Library = old[, "LibPath"],
+    Action = ifelse(writable, "Update", "Skip (read-only library)"),
     row.names = NULL
   )
   print(updates, row.names = FALSE)
@@ -42,18 +44,25 @@ main <- function(dry_run, check = utils::old.packages,
     return(invisible(NULL))
   }
 
-  # Update each copy in its existing library rather than the default library.
+  updates <- updates[writable, , drop = FALSE]
+  if (nrow(updates) == 0L) {
+    message("No updates can be installed in writable libraries.")
+    return(invisible(NULL))
+  }
+
+  # pak installs into the first library and looks for dependencies in the rest.
+  libraries <- .libPaths()
   for (lib in unique(updates$Library)) {
     packages <- unique(updates$Package[updates$Library == lib])
     withCallingHandlers(
-      install(packages, lib = lib, upgrade = TRUE),
+      install(packages, lib = unique(c(lib, libraries)), upgrade = TRUE),
       warning = function(w) {
         stop("Installation reported a warning: ", conditionMessage(w),
              call. = FALSE)
       }
     )
   }
-  message("Package updates completed.")
+  message("Updates in writable libraries completed.")
   invisible(NULL)
 }
 

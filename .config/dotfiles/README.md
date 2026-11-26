@@ -97,6 +97,15 @@ any explicit exposure mappings (such as `pylsp`).
 ### R package updater
 
 `~/.local/bin/rupdate` checks for R package updates and installs them with pak.
+It updates package copies in their existing writable libraries and marks
+updates in read-only libraries as skipped. Pak can use dependencies from other
+active libraries. The dry run lists candidate package updates. Pak may also
+update dependencies during installation.
+
+R excludes core packages such as `stats` from the update check. Recommended
+packages such as `MASS` can be installed separately from the copy shipped with
+R, so both copies can appear in the update list.
+
 On each new machine, install its dependencies and generate the Rapp launcher
 by running this in R:
 
